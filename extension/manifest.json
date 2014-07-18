@@ -1,0 +1,18 @@
+{
+    "name": "",
+    "version": 2,
+    "description": "",
+    "icons": {
+        
+    },
+    "background": {
+        "persistent": false,
+        "scripts": []
+    },
+    "permissions": [],
+    "brower_action": {
+        "default_title": "",
+        "default_icon": "",
+        "default_popup": ""
+    }
+}
