@@ -1,15 +1,82 @@
 <head>
-    <title>Microscope</title>
+    <title>Comment for Web</title>
 </head>
 <body>
+    {{> main}}
+</body>
+
+
+<template name="main">
     <div class="container">
-        <header class="navbar">
-            <div class="navbar-inner">
-                <a class="brand" href="/">Microscope</a>
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <h3 class="text-center">
+                    {{webName}}
+                </h3>
+                <div class="panel-group col-md-12" id="panel-260741">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-260741" href="#panel-element-393854">URL</a>
+                        </div>
+                        <div id="panel-element-393854" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <div class="col-md-12">
+                                    <div class="input-group" id="filter">
+                                      <span class="input-group-addon">URL filter</span>
+                                      <input type="text" class="form-control" placeholder="URL search" id="url-filter">
+                                      <button type="submit" id="url-submit" class="btn btn-default">Enter</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             <a class="panel-title" data-toggle="collapse" data-parent="#panel-260741" href="#panel-element-795158">Comment</a>
+                        </div>
+                        <div id="panel-element-795158" class="panel-collapse in">
+                            <div class="panel-body">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Enter URL</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" placeholder="URL" name="url">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Name</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="name" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Comment</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="comment" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default">Post</button>
+                                            <a target="_blank" href="http://www.facebook.com/share.php?u=分享網址"></a>
+                                            <button type="submit" class="btn btn-default">shareFB</button>
+                                            <a target="_blank" href="http://twitter.com/home/?status=網址標題 分享網址"></a>
+                                            <button type="submit" class="btn btn-default">shareTwitter</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                {{#each posts}}
+                                <blockquote>
+                                    <p>
+                                        {{comment}}
+                                    </p> <small><strong>{{name}}</strong> <cite>at {{date}}</cite></small>
+                                </blockquote>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </header>
-        <div id="main" class="row-fluid">
-            {{> postsList}}
         </div>
     </div>
-</body>
+</template>
