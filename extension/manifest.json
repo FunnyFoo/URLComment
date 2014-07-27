@@ -1,18 +1,15 @@
 {
-    "name": "Comment for Web",
-    "version": 2,
-    "description": "",
-    "icons": {
-        
-    },
-    "background": {
-        "persistent": false,
-        "scripts": []
-    },
-    "permissions": [],
-    "brower_action": {
-        "default_title": "",
-        "default_icon": "",
-        "default_popup": ""
-    }
+  "manifest_version": 2,
+
+  "name": "One-click Kittens",
+  "description": "This extension demonstrates a 'browser action' with kittens.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "https://secure.flickr.com/"
+  ]
 }
