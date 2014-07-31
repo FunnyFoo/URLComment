@@ -1,8 +1,17 @@
 Meteor.subscribe('myBookPosts');
-var Posts = new Meteor.Collection('myBookPosts');
 var _deps = new Deps.Dependency;
 var searchCriteria = {};
 var search_query = "";
+
+function uncollapsePage(e1, e2) {
+    e1.classList.remove('collapsed');
+    e2.classList.add('in');
+}
+
+function collapsePage(e1, e2) {
+    e1.classList.add('collapsed');
+    e2.classList.remove('in');
+}
 
 Template.main.helpers({
     "posts": function() {
@@ -43,6 +52,8 @@ Template.main.events({
             searchCriteria = {'url': search_query};
         else
             searchCriteria = {};
+        collapsePage(document.getElementById('url-collapse'), document.getElementById('panel-element-393854'));
+        uncollapsePage(document.getElementById('comment-collapse'), document.getElementById('panel-element-795158'));
         _deps.changed();
         console.log('search_query: ' + search_query + '\nsearchCriteria: ' + searchCriteria);
     }
