@@ -5,4 +5,10 @@
     }, function(tabArray) {
         document.getElementById('currentLink').innerHTML = tabArray[0].url;
     });
+    
+//    var ddp = new MeteorDdp("ws://localhost:3000/websocket");
+//    
+//    ddp.connect().then(function() {
+//        ddp.subscribe('myBookPosts');
+//    });
 })();
