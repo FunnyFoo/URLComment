@@ -1,4 +1,8 @@
 /* CSS declarations go here */
 #logo {
-    margin: 0 auto;
+  height: 30px
+}
+
+.navbar-brand {
+  display: inline-block;
 }
