@@ -1,8 +1,8 @@
 /* CSS declarations go here */
-#logo {
-  height: 30px
-}
 
+#logo {
+	height: 30px
+}
 .navbar-brand {
-  display: inline-block;
+	display: inline-block;
 }
