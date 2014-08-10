@@ -10,6 +10,7 @@
     <div class="container">
         <div class="row clearfix">
             <div class="col-md-12 column">
+<!--
                 <h3 class="text-center">
                     <p>URL</p>{{webName}}
                 </h3>
@@ -23,15 +24,16 @@
                             <li class="active"><a href="#">Link</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            {{> loginButtons}} <!-- here -->
+                            {{> loginButtons}} 
                         </ul>
                     </div>
-                </div>
-
+                </div> -->
+                
+                <img id="logo" class="img-responsive" src="/images/logo.jpg" alt="URL Comment">
                 <div class="panel-group col-md-12" id="panel-260741">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             <a class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-260741" href="#panel-element-393854">URL</a>
+                             <a id="url-collapse" class="panel-title collapsed" data-toggle="collapse" data-parent="#panel-260741" href="#panel-element-393854">URL</a>
                         </div>
                         <div id="panel-element-393854" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -47,7 +49,7 @@
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             <a class="panel-title" data-toggle="collapse" data-parent="#panel-260741" href="#panel-element-795158">Comment</a>
+                             <a id="comment-collapse" class="panel-title" data-toggle="collapse" data-parent="#panel-260741" href="#panel-element-795158">Comment</a>
                         </div>
                         <div id="panel-element-795158" class="panel-collapse in">
                             <div class="panel-body">

@@ -1,18 +1,20 @@
 {
+    "manifest_version": 2,
+    
     "name": "Comment for Web",
-    "version": 2,
     "description": "",
+    "version": "1.0",
+    
     "icons": {
         
     },
-    "background": {
-        "persistent": false,
-        "scripts": []
-    },
-    "permissions": [],
-    "brower_action": {
-        "default_title": "",
-        "default_icon": "",
-        "default_popup": ""
+    
+    "permissions": [
+        "tabs"
+    ],
+    "browser_action": {
+        "default_icon": "images/map.png",
+        "default_popup": "popup.html"
     }
 }
+
