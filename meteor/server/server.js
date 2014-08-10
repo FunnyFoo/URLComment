@@ -20,8 +20,25 @@ var samplePostsData = [{
 }];
 
 Meteor.startup(function() {
-    // code to run on server at startup
-    Meteor.publish('myBookPosts', function() {
-    	return Posts.find();
+  // code to run on server at startup
+  Meteor.publish('myBookPosts', function() {
+   	return Posts.find();
 	});
+});
+
+Meteor.methods({
+  postComment: function(name, rate, comment, url, pub) {
+    var post = {
+      'name': name,
+      'rate': rate,
+      'comment': comment,
+      'date': new Date().toDateString(),
+      'url': url,
+      'ip': '',
+      'device': '',
+      'public': pub
+    }
+
+    post._id = Posts.insert(post);
+  }
 });

@@ -24,23 +24,11 @@ Template.main.helpers({
 Template.main.events({
     "submit form": function(e) {
         e.preventDefault();
-        var post = {
-            "user_id": "Anonymous",
-            "name": $(e.target).find("[name=name]").val(),
-            "rate": {
-                "0": "",
-                "1": "",
-                "-1": ""
-            },
-            "comment": $(e.target).find("[name=comment]").val(),
-            "date": new Date().toDateString(),
-            "url": $(e.target).find("[name=url]").val(),
-            "ip": "",
-            "device": "",
-            "public": true
-        };
-            
-        post._id = Posts.insert(post);
+        var name = $(e.target).find("[name=name]").val();
+        var comment = $(e.target).find("[name=comment]").val();
+        var url = $(e.target).find("[name=url]").val();
+        Meteor.call('postComment', name, '0', comment, url, true);
+        
         $(e.target).find("[name=name]").val("");
         $(e.target).find("[name=comment]").val("");
     },
