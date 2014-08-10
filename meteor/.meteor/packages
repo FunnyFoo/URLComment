@@ -6,7 +6,7 @@
 standard-app-packages
 insecure
 bootstrap-3
-accounts-ui
 accounts-facebook
 accounts-twitter
 autopublish
+accounts-ui-bootstrap-3
