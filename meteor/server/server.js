@@ -40,5 +40,9 @@ Meteor.methods({
 		}
 
 		post._id = Posts.insert(post);
+	},
+	getPosts: function() {
+		return Posts.find().fetch();
+		// Return an Array of the Posts collection
 	}
 });
