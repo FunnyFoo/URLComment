@@ -1,0 +1,115 @@
+$blue: #0ac8ee;
+$font-color: #4c4c4c;
+$time: #b4b4b4;
+
+html {
+  font-family: 'LiHei Pro Medium', 'Microsoft JhengHei';
+  width: 320px;
+  height: 568px;
+  border: 2px solid #aaa;
+}
+p, h1, h2, span{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-size: 13px;
+  padding: 0;
+  margin: 0;
+}
+
+#url {
+  background-color: $blue;
+  height: 40px;
+  width: 100%;
+}
+
+.title {
+  margin: 0 15px;
+  border-bottom: 1px solid $blue;
+  text-align: center;
+  h1{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    line-height: 1.7em;
+    font-size: 14px;
+    color: $blue;
+  }
+}
+.wrapper {
+  height: 440px;
+  overflow: auto;
+}
+::-webkit-scrollbar { 
+  width: 2px; 
+}
+::-webkit-scrollbar-track {
+  background-color: #fff; 
+  // -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+::-webkit-scrollbar-thumb {
+  background: $blue;
+  border-radius: 5px
+}
+.command {
+  max-height: 150px;
+  overflow: auto;
+  border-radius: 3px;
+  box-sizing: border-box;
+  border: 1px solid $blue;
+  padding: 5px;
+  margin: 7px 10px 7px 10px;
+}
+.content {
+  color: $font-color;
+}
+.time-stamp {
+  font-size: 12px;
+  color: $time;
+  text-align: right;
+}
+.write-command {
+  border-top: 1px solid $blue;
+  position: relative;
+  width: 320px;
+  height: 50px;
+  bottom: 0;
+}
+.write {
+  padding-left: 5px;
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  border: 1 solid lighten($font-color, 30%);
+  max-height: 100px;
+  resize: none;
+  position: absolute;
+  bottom: 7px;
+  left: 5px;
+  &:focus{
+    border: 1 solid $blue;
+    outline: none;
+  }
+}
+.send {
+  position: absolute;
+  right: 5px;
+  bottom: 7px;
+  width: 55px;
+  height: 36px;
+  background-color: $blue;
+  color: white;
+  box-sizing: border-box;
+  border: 1px solid $blue;
+  &:hover {
+    background-color: darken($blue, 2%);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    border: 1px solid lighten($blue, 30%);
+  }
+  
+}
+
