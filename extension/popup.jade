@@ -1,19 +1,18 @@
 html
+	meta(charset="utf-8")
+	//- Script
+	script(type="text/javascript", src="js/lib/jquery-2.0.3.min.js")
+	script(type="text/javascript", src="js/lib/bootstrap.min.js")
+	script(type="text/javascript", src="js/popup.js")
+	script(type="text/javascript", src="js/autogrow.min.js")
 
-head
-	meta charset="utf-8"
-	/ Script
-	script type="text/javascript" src="js/lib/jquery-2.0.3.min.js"
-	script type="text/javascript" src="js/lib/bootstrap.min.js"
-	script type="text/javascript" src="js/popup.js"
-	script type="text/javascript" src="js/autogrow.min.js"
+	//- CasCading Style Sheet
+	//- link(href="css/bootstrap.min.css", rel="stylesheet", media="screen")
+	link(href="stylesheets/custom.css", rel="stylesheet", media="screen")
 
-	/ Cascading Style Sheets
-	/ link href="css/bootstrap.min.css" rel="stylesheet" media="screen"
-	link href="stylesheets/custom.css" rel="stylesheet" media="screen"
 body
 	header#url 
-		div.icon URL
+		.icon URL
 		span.url
 	.title
 		h1 Animated sliding tab bar
