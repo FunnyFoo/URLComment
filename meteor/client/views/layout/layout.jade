@@ -1,0 +1,24 @@
+template(name="main")
+	.container
+		.row.clearfix
+			.col-md-12.column
+				+navbar
+				#panel-260741.panel-group.col-md-12
+					.panel.panel-default
+						.panel-heading
+							a#url-collapse.panel-title.collapsed(data-toggle="collapse", data-parent="#panel-260741", href="#panel-element-393854")
+								| URL
+						#panel-element-393854.panel-collapse.collapse
+							.panel-body
+								.col-md-12
+									+urlSearch
+					.panel.panel-default
+						.panel-heading
+							a#comment-collapse.panel-title(data-toggle="collapse", data-parent="#panel-260741", href="#panel-element-795158")
+								| Comment
+						#panel-element-795158.panel-collapse.in
+							.panel-body
+								.col-md-12
+									+commentForm
+									each posts
+										+postList

@@ -1,0 +1,21 @@
+template(name="commentForm")
+	form.orm-horizontal(role="form")
+		.form-group
+			label.col-sm-2.control-label Enter URL
+			.col-sm-10
+				input.form-control(type="text", placeholder="URL", name="url")
+		.form-group
+			label.col-sm-2.control-label Name
+			.col-sm-10
+				input.form-control(type="text", name="name")
+		.form-group
+			label.col-sm-2.control-label Comment
+			.col-sm-10
+				input.form-control(type="text", name="comment")
+		.form-group
+			.col-sm-10.col-sm-offset-2
+				button.btn.btn-default(type="submit") Post
+				a(target="_blank", href="http://www.facebook.com/share.php?u=分享網址")
+				button.btn.btn-default(type="submit") shareFB
+				a(target="_blank" href="http://twitter.com/home/?status=網址標題 分享網址")
+				button.btn.btn-default(type="submit") shareTwitter
