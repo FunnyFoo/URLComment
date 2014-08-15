@@ -1,4 +1,4 @@
-Meteor.subscribe('myBookPosts');
+Meteor.subscribe('myBookPosts','Good');
 var _deps = new Deps.Dependency;
 var searchCriteria = {};
 var search_query = "";

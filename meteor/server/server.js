@@ -21,8 +21,9 @@ var samplePostsData = [{
 
 Meteor.startup(function () {
 	// code to run on server at startup
-	Meteor.publish('myBookPosts', function () {
-		return Posts.find();
+	Meteor.publish('myBookPosts', function (name) {
+		return Posts.find({
+			name: name});
 	});
 });
 
