@@ -1,8 +1,9 @@
+
 doctype html
-html( leng='en' ng-app='myapp' ng-csp)
+html(leng='en', ng-app='myapp', ng-csp)
 	head
 		meta(charset='utf-8')
-		link(href='stylesheets/custom.css' rel='stylesheet', media='screen')
+		link(href='stylesheets/custom.css', rel='stylesheet', media='screen')
 	body(ng-controller='mainCtrl as main')
 		header#url 
 			.icon 
@@ -10,18 +11,18 @@ html( leng='en' ng-app='myapp' ng-csp)
 					h3 URL: 
 						span {{currentScopeURL}}
 		.title
-			h1 {{'currentScopeTitle'}}
+			h1 {{currentScopeTitle}}
 		.wrapper
 			.command(ng-repeat='comment in comments')
 				pre.content {{comment.comment}}
 				.time-stamp {{comment.date}}
 		.write-command
-			textarea.write(placeholder='寫下你的評論.....')
-			button.send SEND
+			textarea.write(placeholder='寫下你的評論.....', ng-model='inputComment')
+			button.send(ng-click='postComment(inputComment)') SEND
 
-		script(type='text/javascript' src= 'js/lib/jquery-2.0.3.min.js')
-		script(type='text/javascript' src= 'js/lib/angular.min.js')
-		script(type='text/javascript' src= 'js/lib/autogrow.min.js')
-		script(type='text/javascript' src= 'js/lib/meteor-ddp.js')
-		script(type='text/jacascript' src= 'js/angular/app.js')
-		script(type='text/javascript' src= 'js/angular/mainCtrl.js')
+		script(type='text/javascript', src= 'js/lib/jquery-2.0.3.min.js')
+		script(type='text/javascript', src= 'js/lib/angular.min.js')
+		script(type='text/javascript', src= 'js/lib/autogrow.min.js')
+		script(type='text/javascript', src= 'js/lib/meteor-ddp.js')
+		script(type='text/javascript', src= 'js/angular/mainCtrl.js') 
+
