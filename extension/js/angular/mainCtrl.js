@@ -1,5 +1,7 @@
 myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
+	//server url
 	var meteorServerURL = 'cesar2535.meteor.com';
+
 	$scope.comments = [];
 	$scope.currentScopeURL = null;
 	//test url
@@ -41,6 +43,5 @@ $(document).ready(function(){
   , animate: true
   , cloneClass: 'faketextarea'
 	};
-	
 	$('.write').autogrow(opts);
 });
