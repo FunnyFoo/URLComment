@@ -1,16 +1,19 @@
+doctype html
 html( leng='en' ng-app='myapp' ng-csp)
 	head
 		meta(charset='utf-8')
 		link(href='stylesheets/custom.css' rel='stylesheet', media='screen')
 	body(ng-controller='mainCtrl as main')
 		header#url 
-			.icon
-				span.url {{currentScopeURL}}
+			.icon 
+				span.url 
+					h3 URL: 
+						span {{currentScopeURL}}
 		.title
 			h1 {{'currentScopeTitle'}}
 		.wrapper
 			.command(ng-repeat='comment in comments')
-				p.content {{comment.comment}}
+				pre.content {{comment.comment}}
 				.time-stamp {{comment.date}}
 		.write-command
 			textarea.write(placeholder='寫下你的評論.....')

@@ -1,14 +1,15 @@
 $blue: #0ac8ee;
 $font-color: #4c4c4c;
 $time: #b4b4b4;
+$background-color: #fafafa
 
 html {
   font-family: 'LiHei Pro Medium', 'Microsoft JhengHei';
   width: 320px;
   height: 568px;
-  border: 2px solid #aaa;
+  background-color: $background-color;
 }
-p, h1, h2, span{
+p, h1, h2, span, html{
   margin: 0;
   padding: 0;
 }
@@ -21,6 +22,7 @@ body{
 #url {
   background-color: $blue;
   height: 40px;
+  max-height: 100px;
   width: 100%;
 }
 
@@ -56,9 +58,10 @@ body{
   overflow: auto;
   border-radius: 3px;
   box-sizing: border-box;
-  border: 1px solid $blue;
-  padding: 5px;
-  margin: 7px 10px 7px 10px;
+  border: 2px solid lighten($blue, 30%);
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  background-color: #fff;
 }
 .content {
   color: $font-color;
@@ -80,12 +83,14 @@ body{
   margin: 0;
   padding: 0;
   width: 250px;
-  border: 1 solid lighten($font-color, 30%);
-  max-height: 100px;
+  border: 1 solid lighten($font-color, 50%);
+  // max-height: 100px;
   resize: none;
   position: absolute;
   bottom: 7px;
   left: 5px;
+
+
   &:focus{
     border: 1 solid $blue;
     outline: none;
