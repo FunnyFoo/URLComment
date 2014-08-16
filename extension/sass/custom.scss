@@ -109,6 +109,7 @@ body{
   }
   &:active {
     border: 1px solid lighten($blue, 30%);
+    bottom: 10px;
   }
   
 }

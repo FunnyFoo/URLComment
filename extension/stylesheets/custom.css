@@ -1,69 +1,48 @@
-/* line 5, ../sass/custom.scss */
 html {
   font-family: 'LiHei Pro Medium', 'Microsoft JhengHei';
   width: 320px;
   height: 568px;
-  border: 2px solid #aaa;
-}
+  border: 2px solid #aaa; }
 
-/* line 11, ../sass/custom.scss */
 p, h1, h2, span {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
-/* line 15, ../sass/custom.scss */
 body {
   font-size: 13px;
   padding: 0;
-  margin: 0;
-}
+  margin: 0; }
 
-/* line 21, ../sass/custom.scss */
 #url {
   background-color: #0ac8ee;
   height: 40px;
-  width: 100%;
-}
+  width: 100%; }
 
-/* line 27, ../sass/custom.scss */
 .title {
   margin: 0 15px;
   border-bottom: 1px solid #0ac8ee;
-  text-align: center;
-}
-/* line 31, ../sass/custom.scss */
-.title h1 {
-  margin-top: 10px;
-  margin-bottom: 5px;
-  line-height: 1.7em;
-  font-size: 14px;
-  color: #0ac8ee;
-}
+  text-align: center; }
+  .title h1 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    line-height: 1.7em;
+    font-size: 14px;
+    color: #0ac8ee; }
 
-/* line 39, ../sass/custom.scss */
 .wrapper {
   height: 440px;
-  overflow: auto;
-}
+  overflow: auto; }
 
-/* line 43, ../sass/custom.scss */
 ::-webkit-scrollbar {
-  width: 2px;
-}
+  width: 2px; }
 
-/* line 46, ../sass/custom.scss */
 ::-webkit-scrollbar-track {
-  background-color: #fff;
-}
+  background-color: #fff; }
 
-/* line 50, ../sass/custom.scss */
 ::-webkit-scrollbar-thumb {
   background: #0ac8ee;
-  border-radius: 5px;
-}
+  border-radius: 5px; }
 
-/* line 54, ../sass/custom.scss */
 .command {
   max-height: 150px;
   overflow: auto;
@@ -71,31 +50,23 @@ body {
   box-sizing: border-box;
   border: 1px solid #0ac8ee;
   padding: 5px;
-  margin: 7px 10px 7px 10px;
-}
+  margin: 7px 10px 7px 10px; }
 
-/* line 63, ../sass/custom.scss */
 .content {
-  color: #4c4c4c;
-}
+  color: #4c4c4c; }
 
-/* line 66, ../sass/custom.scss */
 .time-stamp {
   font-size: 12px;
   color: #b4b4b4;
-  text-align: right;
-}
+  text-align: right; }
 
-/* line 71, ../sass/custom.scss */
 .write-command {
   border-top: 1px solid #0ac8ee;
   position: relative;
   width: 320px;
   height: 50px;
-  bottom: 0;
-}
+  bottom: 0; }
 
-/* line 78, ../sass/custom.scss */
 .write {
   padding-left: 5px;
   margin: 0;
@@ -106,15 +77,11 @@ body {
   resize: none;
   position: absolute;
   bottom: 7px;
-  left: 5px;
-}
-/* line 89, ../sass/custom.scss */
-.write:focus {
-  border: 1 solid #0ac8ee;
-  outline: none;
-}
+  left: 5px; }
+  .write:focus {
+    border: 1 solid #0ac8ee;
+    outline: none; }
 
-/* line 94, ../sass/custom.scss */
 .send {
   position: absolute;
   right: 5px;
@@ -124,17 +91,8 @@ body {
   background-color: #0ac8ee;
   color: white;
   box-sizing: border-box;
-  border: 1px solid #0ac8ee;
-}
-/* line 104, ../sass/custom.scss */
-.send:hover {
-  background-color: #0ac0e4;
-}
-/* line 107, ../sass/custom.scss */
-.send:focus {
-  outline: none;
-}
-/* line 110, ../sass/custom.scss */
-.send:active {
-  border: 1px solid #96eafb;
-}
+  border: 1px solid #0ac8ee; }
+  .send:hover {
+    background-color: #0ac0e4; }
+  .send:focus {
+    outline: none; }
