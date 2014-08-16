@@ -38,7 +38,6 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 	};
 
 	//initial
-
 	$scope.getCurrentURL().then(function(url){
 		$scope.currentScopeURL = url;
 	});	
