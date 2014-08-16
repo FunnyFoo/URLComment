@@ -1,3 +1,5 @@
+var myapp = angular.module('myapp', []);
+
 myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 	//server url
 	var meteorServerURL = 'cesar2535.meteor.com';
