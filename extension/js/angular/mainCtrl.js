@@ -25,14 +25,16 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 	};
 
 	$scope.postComment = function(comment){
-		var post = ['anonymous', {'0': 0, '1': 0, '-1': 0}, comment, $scope.currentScopeURL, true];
-		ddp.connect().then(function(){
-			var postComment = ddp.call('postComment', post);
-			$scope.inputComment = "";
-		  postComment.then(function(id) {
-		    console.log("insert complete: " + id);
-		  });
-		});
+		if(comment != ""){
+			var post = ['anonymous', {'0': 0, '1': 0, '-1': 0}, comment, $scope.currentScopeURL, true];
+			ddp.connect().then(function(){
+				var postComment = ddp.call('postComment', post);
+				$scope.inputComment = "";
+			  postComment.then(function(id) {
+			    console.log("insert complete: " + id);
+			  });
+			});
+		}
 	};
 
 	//initial
