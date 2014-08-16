@@ -47,7 +47,9 @@ gulp.task('jadehtml', function() {
   var YOUR_LOCALS = {};
 
   gulp.src('*.jade')
-    .pipe(jade())
+    .pipe(jade({
+        pretty: true,
+    }))
     .pipe(gulp.dest('./'))
 });
 
