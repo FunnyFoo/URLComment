@@ -4,6 +4,7 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 
 	$scope.comments = [];
 	$scope.currentScopeURL = null;
+	$scope.currentScopeTitle = null;
 	//test url
 	var ddp = new MeteorDdp('ws://' + meteorServerURL + '/websocket');
 
@@ -13,6 +14,7 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 			active: true,
 			lastFocusedWindow: true
 		}, function (tabArray) {
+			$scope.currentScopeTitle = tabArray[0].title;
 			return deferred.resolve(tabArray[0].url);
 		});
 		return deferred.promise;
