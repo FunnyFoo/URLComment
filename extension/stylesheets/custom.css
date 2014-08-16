@@ -1,7 +1,7 @@
 html {
   font-family: 'LiHei Pro Medium', 'Microsoft JhengHei';
   width: 320px;
-  height: 568px;
+  min-height: 568px;
   border: 2px solid #aaa; }
 
 p, h1, h2, span {
