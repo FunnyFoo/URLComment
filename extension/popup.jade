@@ -1,52 +1,25 @@
-html
-	meta(charset="utf-8")
-	//- Script
-	script(type="text/javascript", src="js/lib/jquery-2.0.3.min.js")
-	script(type="text/javascript", src="js/lib/bootstrap.min.js")
-	script(type="text/javascript", src="js/popup.js")
-	script(type="text/javascript", src="js/autogrow.min.js")
-
-	//- CasCading Style Sheet
-	//- link(href="css/bootstrap.min.css", rel="stylesheet", media="screen")
-	link(href="stylesheets/custom.css", rel="stylesheet", media="screen")
-
-body
+html ng-app="myapp" ng-csp
+	head
+		meta(charset="utf-8")
+		link(href="stylesheets/custom.css", rel="stylesheet", media="screen")
+body ng-controller="mainCtrl as main"
 	header#url 
 		.icon URL
+			h3 {{currentScopeURL}}
 		span.url
 	.title
-		h1 Animated sliding tab bar
+		h1 {{"currentScopeTitle"}}
 	.wrapper
-		.command
-			p.content 我覺得這真是太棒了
-			.time-stamp 2013 / 08 / 12
-		.command 
-			p.content 怎麼說，我想聽聽各位的看法
-			.time-stamp 2013 / 08 / 12
-		.command
-			p.content 可以對不同URL做評論，我們再也不用針對不同平台登入不同系統才可以留言，在這個外掛上就可以討論
-			.time-stamp 2013 / 08 / 12
-		.command
-			p.content 可以對不同URL做評論，我們再也不用針對不同平台登入不同系統才可以留言，在這個外掛上就可以討論
-			.time-stamp 2013 / 08 / 12
-		.command
-			p.content 我覺得這真是太棒了
-			.time-stamp 2013 / 08 / 12
-		.command 
-			p.content 怎麼說，我想聽聽各位的看法
-			.time-stamp 2013 / 08 / 12
-		.command
-			p.content 可以對不同URL做評論，我們再也不用針對不同平台登入不同系統才可以留言，在這個外掛上就可以討論可以對不同URL做評論，我們再也不用針對不同平台登入不同系統才可以留言，在這個外掛上就可以討論可以對不同URL做評論，我們再也不用針對不同平台登入不同系統才可以留言，在這個外掛上就可以討論可以對不同URL做評論，我們再也不用針對不同平台登入不同系統才可以留言，在這個外掛上就可以討論可以對不同URL做評論，我們再也不用針對不同平台登入不同系統才可以留言，在這個外掛上就可以討論
-			.time-stamp 2013 / 08 / 12
-		.command
-			p.content 我覺得這真是太棒了
-			.time-stamp 2013 / 08 / 12
-		.command 
-			p.content 怎麼說，我想聽聽各位的看法
-			.time-stamp 2013 / 08 / 12
-		.command
-			p.content 可以對不同URL做評論，我們再也不用針對不同平台登入不同系統才可以留言，在這個外掛上就可以討論
-			.time-stamp 2013 / 08 / 12
+		.command ng-repeat="comment in comments"
+			p.content {{comment.comment}}
+			.time-stamp {{comment.date}}
 	.write-command
 		textarea.write placeholder="寫下你的評論....."
 		button.send SEND
+
+	script(type="text/javascript", src= "js/lib/jquery-2.0.3.min.js")
+	script(type="text/javascript", src= "js/lib/angular.min.js")
+	script(type="text/javascript", src= "js/lib/autogrow.min.js")
+	script(type="text/javascript", src= "js/lib/meteor-ddp.js")
+	script(type="text/jacascript", src= "js/angular/app.js")
+	script(type="text/javascript", src= "js/angular/mainCtrl.js")
