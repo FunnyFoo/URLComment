@@ -6,6 +6,7 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 
 	$scope.comments = [];
 	$scope.currentScopeURL = null;
+	$scope.inputComment = "";
 	//test url
 	var ddp = new MeteorDdp('ws://' + meteorServerURL + '/websocket');
 
@@ -20,22 +21,36 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 		return deferred.promise;
 	};
 
+	$scope.postComment = function(comment){
+		var post = ['anonymous', {'0': 0, '1': 0, '-1': 0}, comment, $scope.currentScopeURL, true];
+		ddp.connect().then(function(){
+			var postComment = ddp.call('postComment', post);
+			$scope.inputComment = "";
+		  postComment.then(function(id) {
+		    console.log("insert complete: " + id);
+		  });
+		});
+	};
+
+	//initial
+
 	$scope.getCurrentURL().then(function(url){
 		$scope.currentScopeURL = url;
 	});	
 
 
+//ddp client subscribe data from meteor server
 	ddp.connect().then(function() {
 		ddp.subscribe('myBookPosts', [$scope.currentScopeURL]).fail(function(err) {
 		  console.log('Fail to subscribe data from meteor server.');
 		});	  
 	  console.log('Connected!');
-	  ddp.watch('myBookPosts', function(changeDoc, message) {
+	  ddp.watch('myBookPosts', function(changeDoc, message){
+	  	// changeDoc.comment = changeDoc.comment.replace(/\n/g, '<br>');
 	  	$scope.comments.push(changeDoc);
 	  	$scope.$apply();
 	  });
 	});
-
 }]);
 
 //out of controller 

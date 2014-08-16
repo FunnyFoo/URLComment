@@ -38,8 +38,8 @@ Meteor.methods({
 			'device': '',
 			'public': pub
 		}
-
 		post._id = Posts.insert(post);
+		return post._id;
 	},
 	getPosts: function() {
 		return Posts.find().fetch();
