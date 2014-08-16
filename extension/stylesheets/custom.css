@@ -96,3 +96,6 @@ body {
     background-color: #0ac0e4; }
   .send:focus {
     outline: none; }
+  .send:active {
+    border: 1px solid #96eafb;
+    bottom: 10px; }
