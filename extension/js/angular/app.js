@@ -1,0 +1,1 @@
+myapp = angular.module('myapp', []);
