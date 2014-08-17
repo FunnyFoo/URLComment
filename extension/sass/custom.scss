@@ -167,7 +167,10 @@ pre {
 ::-webkit-input-placeholder { /* WebKit browsers */
     color: #dedede;
 }
-.write {
+
+///command textarea
+
+.write, .search {
   color: #fff;
   border-radius: 5px;
   background-color: darken($blue, 5%);
@@ -186,6 +189,15 @@ pre {
     outline: none;
   }
 }
+
+///search input
+.search{
+  width:300px;
+  left: -320px;
+  padding: 16px; 
+}
+
+
 .send {
   cursor: pointer;
   position: absolute;
@@ -207,10 +219,12 @@ pre {
   }
   &:active {
     border-top: 2px solid darken($blue, 25%);
-    // bottom: 49px;
   }
   
 }
+
+//////search toggle
+
 .wrap { 
   position: absolute; 
   bottom: 7px; 

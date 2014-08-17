@@ -66,14 +66,16 @@ angular.element(document).ready(function(){
   , cloneClass: 'faketextarea'
 	};
 	$('.write').autogrow(opts);
-	$('.status-slider').on("click" ,function(){
-		console.log('test');
-		if($('#status').prop("checked")){
-			$('.write').css("left", "10px");
+	$('.status-slider').on('click' ,function(){
+		if($('#status').prop('checked')){
+			$('.write').css('left', '10px');
+			$('.search').css('left', '-300px');
+			$('.send').css('right', '10px');
 		}
 		else {
-			$('.write').css("left", "-350px");
-			console.log( "not check!" );
+			$('.write').css('left', '-300px');
+			$('.search').css('left', '10px')
+			$('.send').css('right', '-50px');
 		};	 
 	});
 });

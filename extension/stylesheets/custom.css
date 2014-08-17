@@ -133,7 +133,7 @@ pre {
   /* WebKit browsers */
   color: #dedede; }
 
-.write {
+.write, .search {
   color: #fff;
   border-radius: 5px;
   background-color: #09b3d6;
@@ -146,10 +146,15 @@ pre {
   left: 10px;
   box-sizing: border-box;
   transition: all 0.5s; }
-  .write:focus {
+  .write:focus, .search:focus {
     background-color: #089fbd;
     border: 0;
     outline: none; }
+
+.search {
+  width: 300px;
+  left: -320px;
+  padding: 16px; }
 
 .send {
   cursor: pointer;
