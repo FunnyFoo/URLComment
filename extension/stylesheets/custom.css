@@ -82,6 +82,11 @@ input[type="text"] {
     color: #0ac8ee;
     max-height: 40px;
     overflow: hidden; }
+  .title #title-name {
+    max-width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block; }
   .title .total {
     position: absolute;
     top: 0;
