@@ -37,6 +37,17 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 		}
 	};
 
+	$scope.keepBottom = function(elem){
+		$(elem).scrollTop($(elem).prop('scrollHeight'));
+	};
+
+	$scope.switchEvent = function(){
+		$scope.keywordFilter = '';
+		setTimeout(function() {
+			$scope.keepBottom('.wrapper');
+		});
+	};
+
 	//initial
 	$scope.getCurrentURL().then(function(url){
 		$scope.currentScopeURL = url;
@@ -53,7 +64,7 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 	  	// changeDoc.comment = changeDoc.comment.replace(/\n/g, '<br>');
 	  	$scope.comments.push(changeDoc);
 	  	$scope.$apply();
-	  	$('.wrapper').scrollTop($('.wrapper').prop('scrollHeight'));
+	  	$scope.keepBottom('.wrapper');
 	  });
 	});
 }]);

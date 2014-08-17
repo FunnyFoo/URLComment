@@ -16,20 +16,19 @@
       </div>
     </header>
     <div class="wrapper">
-      <div ng-repeat="comment in comments" class="command">
+      <div ng-repeat="comment in comments | filter: keywordFilter" class="command">
         <pre class="content">{{comment.comment}}</pre>
         <div class="time-stamp">{{comment.date}}</div>
       </div>
     </div>
     <div class="write-command">
       <textarea placeholder="寫下你的評論....." ng-model="inputComment" ng-enter="postComment(inputComment)" rows="2" wrap="hard" class="write"></textarea>
-      <input type="search" placeholder="搜尋關鍵字...." class="search"/>
+      <input placeholder="搜尋關鍵字...." ng-model="keywordFilter" ng-keydown="keepBottom(&quot;.wrapper&quot;)" class="search"/>
       <button ng-click="postComment(inputComment)" class="send">SEND</button>
       <div class="wrap">
-        <input id="status" type="checkbox" name="status" value="search"/>
+        <input id="status" type="checkbox" name="status" value="search" ng-click="switchEvent()"/>
         <label for="status" class="status-slider"></label><img src="images/comment.svg" class="icon-comment"/><img src="images/search.svg" class="icon-search"/>
       </div>
-      
     </div>
     <script type="text/javascript" src="js/lib/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
