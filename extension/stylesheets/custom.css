@@ -71,7 +71,8 @@ input[type="text"] {
   margin-bottom: 5px;
   line-height: 1.7em;
   font-size: 14px;
-  color: #0ac8ee; }
+  color: #0ac8ee;
+  position: relative; }
   .title h1 {
     display: block;
     margin-top: 10px;
@@ -81,6 +82,12 @@ input[type="text"] {
     color: #0ac8ee;
     max-height: 40px;
     overflow: hidden; }
+  .title .total {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 8pt;
+    color: #b4b4b4; }
 
 .wrapper {
   height: 372px;

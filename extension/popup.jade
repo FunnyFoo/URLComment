@@ -10,6 +10,7 @@ html(leng='en', ng-app='myapp', ng-csp)
 				input(required='' , type='text' ng-model="currentScopeURL") 
 				label(alt='URL :' , placeholder='URL :')
 			.title {{currentScopeTitle}}
+				.total Total: {{comments.length}}
 		.wrapper
 			.command(ng-repeat='comment in comments')
 				pre.content {{comment.comment}}

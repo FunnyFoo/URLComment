@@ -115,6 +115,7 @@ input[type="text"] {
   line-height: 1.7em;
   font-size: 14px;
   color: $blue;
+  position: relative;
   
   h1{
     display: block;
@@ -126,6 +127,14 @@ input[type="text"] {
     max-height: 40px;
     overflow: hidden;
     
+  }
+
+  .total {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 8pt;
+    color: $time;
   }
 }
 .wrapper {
