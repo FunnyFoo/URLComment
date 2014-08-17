@@ -20,7 +20,7 @@ html(leng='en', ng-app='myapp', ng-csp)
 			input.search(placeholder="搜尋關鍵字....", ng-model='keywordFilter', ng-keydown='keepBottom(".wrapper")')
 			button.send(ng-click='postComment(inputComment)') SEND
 			.wrap
-				input#status(type='checkbox' name="status" value="search")
+				input#status(type='checkbox' name="status" value="search" ng-click='switchEvent()')
 				label.status-slider(for='status')
 			//- .container.search
 			//- 	.switch.white

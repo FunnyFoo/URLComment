@@ -26,7 +26,7 @@
       <input placeholder="搜尋關鍵字...." ng-model="keywordFilter" ng-keydown="keepBottom(&quot;.wrapper&quot;)" class="search"/>
       <button ng-click="postComment(inputComment)" class="send">SEND</button>
       <div class="wrap">
-        <input id="status" type="checkbox" name="status" value="search"/>
+        <input id="status" type="checkbox" name="status" value="search" ng-click="switchEvent()"/>
         <label for="status" class="status-slider"></label>
       </div>
       
