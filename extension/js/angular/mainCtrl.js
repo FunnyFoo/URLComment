@@ -53,12 +53,13 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 	  	// changeDoc.comment = changeDoc.comment.replace(/\n/g, '<br>');
 	  	$scope.comments.push(changeDoc);
 	  	$scope.$apply();
+	  	$('.wrapper').scrollTop($('.wrapper').prop('scrollHeight'));
 	  });
 	});
 }]);
 
 //out of controller 
-$(document).ready(function(){
+angular.element(document).ready(function(){
 	var opts = {
   	context: $('.write-command')
   , animate: true
