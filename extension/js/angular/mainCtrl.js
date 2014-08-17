@@ -43,8 +43,9 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 
 	$scope.switchEvent = function(){
 		$scope.keywordFilter = '';
-	  $scope.$apply();
-		$scope.keepBottom('.wrapper');
+		setTimeout(function() {
+			$scope.keepBottom('.wrapper');
+		});
 	};
 
 	//initial
