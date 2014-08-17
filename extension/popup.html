@@ -23,11 +23,11 @@
     </div>
     <div class="write-command">
       <textarea placeholder="寫下你的評論....." ng-model="inputComment" ng-enter="postComment(inputComment)" rows="2" wrap="hard" class="write"></textarea>
-      <input placeholder="搜尋關鍵字...." class="search"/>
+      <input type="search" placeholder="搜尋關鍵字...." class="search"/>
       <button ng-click="postComment(inputComment)" class="send">SEND</button>
       <div class="wrap">
         <input id="status" type="checkbox" name="status" value="search"/>
-        <label for="status" class="status-slider"></label>
+        <label for="status" class="status-slider"></label><img src="images/comment.svg" class="icon-comment"/><img src="images/search.svg" class="icon-search"/>
       </div>
       
     </div>

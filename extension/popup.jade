@@ -17,11 +17,15 @@ html(leng='en', ng-app='myapp', ng-csp)
 				.time-stamp {{comment.date}}
 		.write-command
 			textarea.write(placeholder='寫下你的評論.....', ng-model='inputComment', ng-enter='postComment(inputComment)' , rows="2" , wrap="hard")
-			input.search(placeholder="搜尋關鍵字....")
+			input.search(type='search', placeholder="搜尋關鍵字....")
 			button.send(ng-click='postComment(inputComment)') SEND
 			.wrap
 				input#status(type='checkbox' name="status" value="search")
 				label.status-slider(for='status')
+				img.icon-comment(src="images/comment.svg")
+				img.icon-search(src="images/search.svg")
+
+
 			//- .container.search
 			//- 	.switch.white
 			//- 			input#switch-off(name='switch', type='radio')

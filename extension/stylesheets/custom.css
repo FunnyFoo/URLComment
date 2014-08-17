@@ -139,7 +139,8 @@ pre {
   position: absolute;
   width: 320px;
   height: 108px;
-  bottom: 0; }
+  bottom: 0;
+  overflow: hidden; }
 
 ::-webkit-input-placeholder {
   /* WebKit browsers */
@@ -157,16 +158,23 @@ pre {
   bottom: 50px;
   left: 10px;
   box-sizing: border-box;
-  transition: all 0.5s; }
+  transition: all 0.3s ease; }
   .write:focus, .search:focus {
     background-color: #089fbd;
     border: 0;
     outline: none; }
 
 .search {
+  background-color: #e0f9fe;
   width: 300px;
   left: -320px;
   padding: 16px; }
+  .search::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #4ddbf8; }
+  .search:focus {
+    background-color: #c7f4fd;
+    color: #089fbd; }
 
 .send {
   cursor: pointer;
@@ -180,7 +188,7 @@ pre {
   color: white;
   box-sizing: border-box;
   border: 1px solid #0ac8ee;
-  transition: all 0.3s; }
+  transition: all 0.2s; }
   .send:hover {
     background-color: #078aa5; }
   .send:focus {
@@ -190,8 +198,8 @@ pre {
 
 .wrap {
   position: absolute;
-  bottom: 7px;
-  left: 10px;
+  bottom: 10px;
+  left: 120px;
   float: left; }
   .wrap input {
     position: absolute;
@@ -201,31 +209,52 @@ pre {
   position: relative;
   display: block;
   width: 90px;
-  height: 36px;
+  height: 28px;
   cursor: pointer;
-  border-radius: 5px;
-  transition: 350ms;
+  border-radius: 30px;
+  transition: 0.35s;
   background: #ddd; }
 
 .status-slider::after {
   position: absolute;
   content: '';
-  width: 26px;
-  height: 26px;
-  top: 5px;
+  width: 20px;
+  height: 20px;
+  top: 4px;
   left: 5px;
-  border-radius: 20px;
+  border-radius: 30px;
   transition: width 200ms ease-out, height 300ms 50ms ease-in, top 300ms 50ms ease-in, left 250ms 50ms ease-in, box-shadow 300ms ease-in;
-  background: #0ac8ee;
-  box-shadow: 0 0 0 1.5em #f2f2f2 inset; }
+  background: white; }
 
 input:checked + .status-slider::after {
-  width: 30px;
-  height: 30px;
-  top: 3px;
-  left: 56px;
+  width: 26px;
+  height: 26px;
+  top: 0.5px;
+  left: 61px;
   box-shadow: 0 0 0 0 #f2f2f2 inset;
-  border-radius: 50%; }
+  border-radius: 50%;
+  background: #089fbd; }
 
 input:checked + .write {
   width: 0; }
+
+.icon-comment, .icon-search {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transition: 0.3s; }
+
+.icon-comment {
+  bottom: 4px;
+  left: -30px; }
+
+.icon-search {
+  bottom: 4px;
+  right: -26px;
+  opacity: 0; }
+
+input:checked ~ .icon-comment {
+  opacity: 0; }
+
+input:checked ~ .icon-search {
+  opacity: 0.9; }
