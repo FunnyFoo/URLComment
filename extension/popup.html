@@ -1,28 +1,17 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html leng="en" ng-app="myapp" ng-csp>
-=======
 
 <html leng="en" ng-app="myapp" ng-csp="ng-csp">
->>>>>>> b4d079f5ef0bb65315d720d88518db157f5d4042
   <head>
-    <meta charset="utf-8">
-    <link href="stylesheets/custom.css" rel="stylesheet" media="screen">
+    <meta charset="utf-8"/>
+    <link href="stylesheets/custom.css" rel="stylesheet" media="screen"/>
   </head>
   <body ng-controller="mainCtrl as main">
     <header id="url"> 
-<<<<<<< HEAD
-      <div class="icon"> <span class="url"> 
-          <h3>URL: <span>{{currentScopeURL}}</span></h3></span></div>
-=======
       <div class="icon">
-        <h3>{{currentScopeURL}}</h3>
-      </div><span class="url"></span>
->>>>>>> b4d079f5ef0bb65315d720d88518db157f5d4042
+        <input required="" type="text" ng-model="currentScopeURL"/>
+        <label alt="URL :" placeholder="URL :"></label>
+      </div>
+      <div class="title">{{currentScopeTitle}}</div>
     </header>
-    <div class="title">
-      <h1>{{currentScopeTitle}}</h1>
-    </div>
     <div class="wrapper">
       <div ng-repeat="comment in comments" class="command">
         <pre class="content">{{comment.comment}}</pre>
@@ -30,8 +19,13 @@
       </div>
     </div>
     <div class="write-command">
-      <textarea placeholder="寫下你的評論....." ng-model="inputComment" class="write"></textarea>
+      <textarea rows="2" wrap="hard" placeholder="寫下你的評論....." ng-model="inputComment" class="write"></textarea>
       <button ng-click="postComment(inputComment)" class="send">SEND</button>
+      <div class="wrap">
+        <input id="status" type="checkbox" checked=""/>
+        <label for="status" class="status-slider"></label>
+      </div>
+      
     </div>
     <script type="text/javascript" src="js/lib/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="js/lib/angular.min.js"></script>

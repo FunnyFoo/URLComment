@@ -1,24 +1,33 @@
 
-doctype html
+//- doctype html
 html(leng='en', ng-app='myapp', ng-csp)
 	head
 		meta(charset='utf-8')
 		link(href='stylesheets/custom.css', rel='stylesheet', media='screen')
 	body(ng-controller='mainCtrl as main')
 		header#url 
-			.icon 
-				span.url 
-					h3 URL: 
-						span {{currentScopeURL}}
-		.title
-			h1 {{currentScopeTitle}}
+			.icon
+				input(required='' , type='text' ng-model="currentScopeURL") 
+				label(alt='URL :' , placeholder='URL :')
+			.title {{currentScopeTitle}}
 		.wrapper
 			.command(ng-repeat='comment in comments')
 				pre.content {{comment.comment}}
 				.time-stamp {{comment.date}}
 		.write-command
-			textarea.write(placeholder='寫下你的評論.....', ng-model='inputComment')
+			textarea.write(rows="2" , wrap="hard" , placeholder='寫下你的評論.....', ng-model='inputComment')
 			button.send(ng-click='postComment(inputComment)') SEND
+			.wrap
+				input#status(type='checkbox', checked='')
+				label.status-slider(for='status')
+			//- .container.search
+			//- 	.switch.white
+			//- 			input#switch-off(name='switch', type='radio')
+			//- 			input#switch-on(checked='checked', name='switch', type='radio')
+			//- 			label(for='switch-off') Commend
+			//- 			label(for='switch-on') Search
+			//- 			span.toggle
+
 
 		script(type='text/javascript', src= 'js/lib/jquery-2.0.3.min.js')
 		script(type='text/javascript', src= 'js/lib/angular.min.js')
