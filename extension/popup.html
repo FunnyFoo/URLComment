@@ -7,7 +7,7 @@
   <body ng-controller="mainCtrl as main">
     <header id="url"> 
       <div class="icon">
-        <input required="" type="text" placeholder="currentScopeURL"/>
+        <input required="" type="text" ng-model="currentScopeURL"/>
         <label alt="URL :" placeholder="URL :"></label>
       </div>
       <div class="title">{{currentScopeTitle}}</div>
@@ -20,9 +20,10 @@
     </div>
     <div class="write-command">
       <textarea placeholder="寫下你的評論....." ng-model="inputComment" ng-enter="postComment(inputComment)" rows="2" wrap="hard" class="write"></textarea>
+      <input placeholder="搜尋關鍵字...." class="search"/>
       <button ng-click="postComment(inputComment)" class="send">SEND</button>
       <div class="wrap">
-        <input id="status" type="checkbox"/>
+        <input id="status" type="checkbox" name="status" value="search"/>
         <label for="status" class="status-slider"></label>
       </div>
       

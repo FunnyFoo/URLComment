@@ -208,4 +208,7 @@ input:checked + .status-slider::after {
   top: 3px;
   left: 56px;
   box-shadow: 0 0 0 0 #f2f2f2 inset;
-  border-radius: 5px; }
+  border-radius: 50%; }
+
+input:checked + .write {
+  width: 0; }

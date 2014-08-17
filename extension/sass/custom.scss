@@ -87,22 +87,10 @@ input[type="text"] {
         color: #f1f1f1;
         white-space: nowrap;
         transition: 0.3s ease-in-out;
-        // background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
-        // background-image: -webkit-linear-gradient(top, white, white);
-        // background-image: linear-gradient(to bottom, white, white);
-        // -webkit-background-size: 100% 5px;
-        // background-size: 100% 5px;
-        // background-repeat: no-repeat;
-        // background-position: center;
       }
     }
   }
 }
-
-
-
-
-
 .title {
   white-space: nowrap;
   text-overflow: ellipsis; 
@@ -223,19 +211,6 @@ pre {
   }
   
 }
-
-// input {
-//   font-family: inherit;
-//   font-size: 13px;
-//   line-height: normal;
-//   margin: 0;
-//   &[type="radio"] {
-//     box-sizing: border-box;
-//     padding: 0;
-//   }
-// }
-
-
 .wrap { 
   position: absolute; 
   bottom: 7px; 
@@ -246,8 +221,6 @@ pre {
     left: -9999px 
   }
 }
-
-
 
 // ********** Background:
 .status-slider {
@@ -286,6 +259,8 @@ input:checked + .status-slider::after {
   top: 3px; 
   left: 56px;
   box-shadow: 0 0 0 0 #f2f2f2 inset;
-  border-radius: 5px;
+  border-radius: 50%;  
 }
-
+input:checked + .write {
+  width: 0;
+}

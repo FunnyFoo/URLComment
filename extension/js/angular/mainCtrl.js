@@ -66,4 +66,14 @@ angular.element(document).ready(function(){
   , cloneClass: 'faketextarea'
 	};
 	$('.write').autogrow(opts);
+	$('.status-slider').on("click" ,function(){
+		console.log('test');
+		if($('#status').prop("checked")){
+			$('.write').css("left", "10px");
+		}
+		else {
+			$('.write').css("left", "-350px");
+			console.log( "not check!" );
+		};	 
+	});
 });
