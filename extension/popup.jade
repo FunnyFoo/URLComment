@@ -15,7 +15,7 @@ html(leng='en', ng-app='myapp', ng-csp)
 				pre.content {{comment.comment}}
 				.time-stamp {{comment.date}}
 		.write-command
-			textarea.write(rows="2" , wrap="hard" , placeholder='寫下你的評論.....', ng-model='inputComment')
+			textarea.write(placeholder='寫下你的評論.....', ng-model='inputComment', ng-enter='postComment(inputComment)' , rows="2" , wrap="hard")
 			button.send(ng-click='postComment(inputComment)') SEND
 			.wrap
 				input#status(type='checkbox', checked='')
@@ -34,4 +34,5 @@ html(leng='en', ng-app='myapp', ng-csp)
 		script(type='text/javascript', src= 'js/lib/autogrow.min.js')
 		script(type='text/javascript', src= 'js/lib/meteor-ddp.js')
 		script(type='text/javascript', src= 'js/angular/mainCtrl.js') 
+		script(type='text/javascript', src= 'js/angular/mainDirective.js') 
 

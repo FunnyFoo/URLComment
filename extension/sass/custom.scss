@@ -8,6 +8,8 @@ html {
   width: 320px;
   height: 568px;
   background-color: $background-color;
+  min-height: 568px;
+  // border: 2px solid #aaa;
 }
 p, h1, h2, span, html{
   margin: 0;
@@ -286,98 +288,3 @@ input:checked + .status-slider::after {
   border-radius: 5px;
 }
 
-
-// /* ---------- SWITCH ---------- */
-// .search {
-//   position: absolute;
-//   bottom: 5px;
-//   left: 5px;
-// }
-// .container {
-//   height: 30px;
-//   left: 50%;
-//   margin: -32px 0 0 -80px;
-//   position: absolute;
-//   top: 50%;
-// }
-
-// .switch {
-//   background: #fff;
-//   border-radius: 32px;
-//   display: block;
-//   height: 30px;
-//   position: relative;
-//   width: 132px;
-//   label {
-//     color: #fff;
-//     font-size: 14px;
-//     font-weight: 300;
-//     line-height: 30px;
-//     -webkit-transition: color .2s ease;
-//     -moz-transition: color .2s ease;
-//     -ms-transition: color .2s ease;
-//     -o-transition: color .2s ease;
-//     transition: color .2s ease;
-//     width: 100px;
-//     &:nth-of-type(1) {
-//       left: 10px;
-//       position: absolute;
-//       text-align: left;
-//     }
-//     &:nth-of-type(2) {
-//       position: absolute;
-//       right: 10px;
-//       text-align: right;
-//     }
-//   }
-//   input {
-//     height: 64px;
-//     left: 0;
-//     opacity: 0;
-//     position: absolute;
-//     top: 0;
-//     width: 200px;
-//     z-index: 2;
-//     &:checked {
-//       ~ label {
-//         &:nth-of-type(1) {
-//           color: transparent;
-//         }
-//         &:nth-of-type(2) {
-//           color: #f00;
-//         }
-//       }
-//       ~ .toggle {
-//         left: 4px;
-//       }
-//       z-index: 0;
-//     }
-//     ~ :checked ~ label {
-//       &:nth-of-type(1) {
-//         color: #f00;
-//       }
-//       &:nth-of-type(2) {
-//         color: transparent;
-//       }
-//     }
-//     ~ :checked ~ .toggle {
-//       left: 100px;
-//     }
-//   }
-// }
-
-// .toggle {
-//   background: #4a4a4a;
-//   border-radius: 50%;
-//   height: 28px;
-//   left: 0;
-//   position: absolute;
-//   top: 1px;
-//   -webkit-transition: left .2s ease;
-//   -moz-transition: left .2s ease;
-//   -ms-transition: left .2s ease;
-//   -o-transition: left .2s ease;
-//   transition: left .2s ease;
-//   width: 28px;
-//   z-index: 1;
-// }

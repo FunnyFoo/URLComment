@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="write-command">
-      <textarea rows="2" wrap="hard" placeholder="寫下你的評論....." ng-model="inputComment" class="write"></textarea>
+      <textarea placeholder="寫下你的評論....." ng-model="inputComment" ng-enter="postComment(inputComment)" rows="2" wrap="hard" class="write"></textarea>
       <button ng-click="postComment(inputComment)" class="send">SEND</button>
       <div class="wrap">
         <input id="status" type="checkbox" checked=""/>
@@ -32,5 +32,6 @@
     <script type="text/javascript" src="js/lib/autogrow.min.js"></script>
     <script type="text/javascript" src="js/lib/meteor-ddp.js"></script>
     <script type="text/javascript" src="js/angular/mainCtrl.js"> </script>
+    <script type="text/javascript" src="js/angular/mainDirective.js"> </script>
   </body>
 </html>
