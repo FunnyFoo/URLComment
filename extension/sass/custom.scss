@@ -5,7 +5,7 @@ $time: #b4b4b4;
 html {
   font-family: 'LiHei Pro Medium', 'Microsoft JhengHei';
   width: 320px;
-  height: 568px;
+  min-height: 568px;
   border: 2px solid #aaa;
 }
 p, h1, h2, span{
@@ -109,6 +109,7 @@ body{
   }
   &:active {
     border: 1px solid lighten($blue, 30%);
+    bottom: 10px;
   }
   
 }

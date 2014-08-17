@@ -21,8 +21,8 @@ var samplePostsData = [{
 
 Meteor.startup(function () {
 	// code to run on server at startup
-	Meteor.publish('myBookPosts', function () {
-		return Posts.find();
+	Meteor.publish('myBookPosts', function (url) {
+		return Posts.find({url: url});
 	});
 });
 
@@ -38,8 +38,8 @@ Meteor.methods({
 			'device': '',
 			'public': pub
 		}
-
 		post._id = Posts.insert(post);
+		return post._id;
 	},
 	getPosts: function() {
 		return Posts.find().fetch();
