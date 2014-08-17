@@ -1,5 +1,5 @@
 html {
-  font-family: 'LiHei Pro Medium', 'Microsoft JhengHei';
+  font-family: "微軟正黑體", "Microsoft JhengHei", 'LiHei Pro Medium';
   width: 320px;
   height: 568px;
   background-color: #fafafa;
@@ -10,6 +10,7 @@ p, h1, h2, span, html {
   padding: 0; }
 
 body {
+  font-family: "微軟正黑體", "Microsoft JhengHei", 'LiHei Pro Medium';
   font-size: 13px;
   padding: 0;
   margin: 0; }

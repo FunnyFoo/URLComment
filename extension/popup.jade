@@ -7,7 +7,7 @@ html(leng='en', ng-app='myapp', ng-csp)
 	body(ng-controller='mainCtrl as main')
 		header#url 
 			.icon
-				input(required='' , type='text' ng-model="currentScopeURL") 
+				input(required='' , type='text' placeholder="currentScopeURL") 
 				label(alt='URL :' , placeholder='URL :')
 			.title {{currentScopeTitle}}
 		.wrapper
@@ -18,7 +18,7 @@ html(leng='en', ng-app='myapp', ng-csp)
 			textarea.write(placeholder='寫下你的評論.....', ng-model='inputComment', ng-enter='postComment(inputComment)' , rows="2" , wrap="hard")
 			button.send(ng-click='postComment(inputComment)') SEND
 			.wrap
-				input#status(type='checkbox', checked='')
+				input#status(type='checkbox')
 				label.status-slider(for='status')
 			//- .container.search
 			//- 	.switch.white
