@@ -12,12 +12,12 @@ html(leng='en', ng-app='myapp', ng-csp)
 				#title-name {{currentScopeTitle}}
 				.total Total: {{comments.length}}
 		.wrapper
-			.command(ng-repeat='comment in comments')
+			.command(ng-repeat='comment in comments | filter: keywordFilter')
 				pre.content {{comment.comment}}
 				.time-stamp {{comment.date}}
 		.write-command
 			textarea.write(placeholder='寫下你的評論.....', ng-model='inputComment', ng-enter='postComment(inputComment)' , rows="2" , wrap="hard")
-			input.search(placeholder="搜尋關鍵字....")
+			input.search(placeholder="搜尋關鍵字....", ng-model='keywordFilter', ng-keydown='keepBottom(".wrapper")')
 			button.send(ng-click='postComment(inputComment)') SEND
 			.wrap
 				input#status(type='checkbox' name="status" value="search")
