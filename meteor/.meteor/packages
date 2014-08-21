@@ -11,3 +11,5 @@ accounts-twitter
 accounts-ui-bootstrap-3
 kadira
 jade
+iron-router
+spin
