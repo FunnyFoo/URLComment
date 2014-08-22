@@ -6,7 +6,8 @@
       "accounts-ui-bootstrap-3": {},
       "kadira": {},
       "iron-router": {},
-      "spin": {}
+      "spin": {},
+      "sass": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -33,6 +34,11 @@
         "git": "https://github.com/SachaG/meteor-spin.git",
         "tag": "v2.0.4",
         "commit": "f7b1e12a7caff1283cdb3671a393c182d0ae9862"
+      },
+      "sass": {
+        "git": "https://github.com/particle4dev/meteor-sass.git",
+        "tag": "v0.1.7",
+        "commit": "b41757f87475186b1485ec54a819d6e027ee3d88"
       },
       "iron-layout": {
         "git": "https://github.com/EventedMind/iron-layout.git",

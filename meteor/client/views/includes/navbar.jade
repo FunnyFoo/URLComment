@@ -11,11 +11,11 @@ template(name="navbar")
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
         li
-          a(href="") About
+          a(href="{{pathFor 'about'}}") About
         li
           a(href="{{pathFor 'blog'}}") Blog
         li
-          a(href="") Products
+          a(href="{{pathFor 'products'}}") Products
       ul.nav.navbar-nav.navbar-right
         li
           a(href="") Contacts
