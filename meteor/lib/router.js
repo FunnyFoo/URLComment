@@ -8,6 +8,7 @@ Router.configure({
 
 Router.map(function() {
   this.route('home', {path: '/'});
+  this.route('blog', {path: '/blog'})
 });
 
 Router.onBeforeAction('loading');

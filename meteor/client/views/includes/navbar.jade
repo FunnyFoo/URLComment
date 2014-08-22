@@ -10,13 +10,17 @@ template(name="navbar")
         img#logo.img-responsive(src="/images/logo.jpg", alt="URL Comment")
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
-        li.active
+        li
           a(href="") About
+        li
+          a(href="{{pathFor 'blog'}}") Blog
         li
           a(href="") Products
       ul.nav.navbar-nav.navbar-right
+        li
+          a(href="") Contacts
         li.dropdown
-          a.dropdown-toggle(data-toggle="dropdown") 
+          a.dropdown-toggle(data-toggle="dropdown")
             | Dropdown
             strong.caret
           ul.dropdown-menu
