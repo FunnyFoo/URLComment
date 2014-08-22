@@ -1,4 +1,4 @@
 URLComment
 ==========
 
-Build the Chrome extension with Meteor
+A Chrome extension with Meteor
