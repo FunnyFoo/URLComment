@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('about', {path: '/about'});
   this.route('blog', {path: '/blog'});
   this.route('products', {path: '/products'});
+  this.route('contacts', {path: '/contacts'});
 });
 
 Router.onBeforeAction('loading');

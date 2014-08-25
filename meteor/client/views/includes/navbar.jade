@@ -11,14 +11,20 @@ template(name="navbar")
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav
         li
-          a(href="{{pathFor 'about'}}") About
+          form.search-container
+            input#search-box.search-box(type='text', name='q')
+            label(for='search-box')
+              span.glyphicon.glyphicon-search.search-icon
+            input#search-submit(type="submit")
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href="{{pathFor 'products'}}") Products
         li
           a(href="{{pathFor 'blog'}}") Blog
         li
-          a(href="{{pathFor 'products'}}") Products
-      ul.nav.navbar-nav.navbar-right
+          a(href="{{pathFor 'about'}}") About
         li
-          a(href="") Contacts
+          a(href="{{pathFor 'contacts'}}") Contacts
         li.dropdown
           a.dropdown-toggle(data-toggle="dropdown")
             | Dropdown
