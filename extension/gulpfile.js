@@ -55,4 +55,4 @@ gulp.task('jadehtml', function() {
 
 
 // Default Task
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['jadehtml', 'sass', 'watch']);

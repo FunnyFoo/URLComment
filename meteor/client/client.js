@@ -13,7 +13,7 @@ function collapsePage(e1, e2) {
 	e2.classList.remove('in');
 }
 
-Template.main.helpers({
+Template.layout.helpers({
 	"posts": function () {
 		_deps.depend();
 		return Posts.find(searchCriteria);
@@ -21,7 +21,7 @@ Template.main.helpers({
 	"webName": document.URL
 });
 
-Template.main.events({
+Template.layout.events({
 	"submit form": function (e) {
 		e.preventDefault();
 		var name = $(e.target).find("[name=name]").val();

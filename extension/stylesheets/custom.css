@@ -1,40 +1,107 @@
 html {
-  font-family: 'LiHei Pro Medium', 'Microsoft JhengHei';
+  font-family: "微軟正黑體", "Microsoft JhengHei", 'LiHei Pro Medium';
   width: 320px;
-  min-height: 568px;
-  border: 2px solid #aaa; }
+  height: 568px;
+  background-color: #fafafa;
+  min-height: 568px; }
 
-p, h1, h2, span {
+p, h1, h2, span, html {
   margin: 0;
   padding: 0; }
 
 body {
+  font-family: "微軟正黑體", "Microsoft JhengHei", 'LiHei Pro Medium';
   font-size: 13px;
   padding: 0;
   margin: 0; }
 
-#url {
-  background-color: #0ac8ee;
-  height: 40px;
-  width: 100%; }
+input[type="text"] {
+  display: block;
+  margin: 10px 0 0 10px;
+  color: transparent;
+  box-sizing: border-box;
+  width: 70px;
+  height: 30px;
+  padding: 15px 5px 15px 5px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  background: #fff;
+  resize: none;
+  outline: none;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  background-color: #0ac8ee; }
+  input[type="text"][required]:focus {
+    background-color: #09b3d6;
+    cursor: text;
+    margin-left: 50px;
+    width: 260px;
+    color: #fff; }
+    input[type="text"][required]:focus + label[placeholder]:before {
+      font-size: 14px;
+      color: #0ac8ee;
+      transform: translate(-10px, 0px); }
+  input[type="text"][required] + label[placeholder] {
+    display: block;
+    pointer-events: none;
+    line-height: 17px;
+    margin: -23px auto 0 auto;
+    padding-left: 20px; }
+    input[type="text"][required] + label[placeholder]:before {
+      font-size: 18px;
+      font-weight: bold;
+      content: attr(placeholder);
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      padding: 0 2px;
+      color: #f1f1f1;
+      white-space: nowrap;
+      transition: 0.3s ease-in-out; }
 
 .title {
-  margin: 0 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0 10px;
+  width: 300px;
   border-bottom: 1px solid #0ac8ee;
-  text-align: center; }
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  line-height: 1.7em;
+  font-size: 14px;
+  color: #0ac8ee;
+  position: relative; }
   .title h1 {
+    display: block;
     margin-top: 10px;
     margin-bottom: 5px;
     line-height: 1.7em;
     font-size: 14px;
-    color: #0ac8ee; }
+    color: #0ac8ee;
+    max-height: 40px;
+    overflow: hidden; }
+  .title #title-name {
+    max-width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block; }
+  .title .total {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 8pt;
+    color: #b4b4b4; }
 
 .wrapper {
-  height: 440px;
+  height: 372px;
   overflow: auto; }
 
 ::-webkit-scrollbar {
-  width: 2px; }
+  width: 2px;
+  height: 4px; }
 
 ::-webkit-scrollbar-track {
   background-color: #fff; }
@@ -48,12 +115,16 @@ body {
   overflow: auto;
   border-radius: 3px;
   box-sizing: border-box;
-  border: 1px solid #0ac8ee;
-  padding: 5px;
-  margin: 7px 10px 7px 10px; }
+  border-left: 3px solid #96eafb;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  background-color: #fff; }
 
-.content {
-  color: #4c4c4c; }
+pre {
+  color: #4c4c4c;
+  display: block;
+  word-wrap: break-word; }
 
 .time-stamp {
   font-size: 12px;
@@ -61,41 +132,129 @@ body {
   text-align: right; }
 
 .write-command {
-  border-top: 1px solid #0ac8ee;
-  position: relative;
+  color: white;
+  background-color: #0ac8ee;
+  border-top: 1px solid #35d6f6;
+  box-shadow: 0 -2px 0 rgba(200, 200, 200, 0.7);
+  position: absolute;
   width: 320px;
-  height: 50px;
-  bottom: 0; }
+  height: 108px;
+  bottom: 0;
+  overflow: hidden; }
 
-.write {
-  padding-left: 5px;
-  margin: 0;
-  padding: 0;
-  width: 250px;
-  border: 1 solid #999999;
-  max-height: 100px;
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #dedede; }
+
+.write, .search {
+  color: #fff;
+  border-radius: 5px;
+  background-color: #09b3d6;
+  padding: 8px;
+  width: 240px;
+  border: 0;
   resize: none;
   position: absolute;
-  bottom: 7px;
-  left: 5px; }
-  .write:focus {
-    border: 1 solid #0ac8ee;
+  bottom: 50px;
+  left: 10px;
+  box-sizing: border-box;
+  transition: all 0.3s ease; }
+  .write:focus, .search:focus {
+    background-color: #089fbd;
+    border: 0;
     outline: none; }
 
+.search {
+  background-color: #e0f9fe;
+  width: 300px;
+  left: -320px;
+  padding: 16px; }
+  .search::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #4ddbf8; }
+  .search:focus {
+    background-color: #c7f4fd;
+    color: #089fbd; }
+
 .send {
+  cursor: pointer;
   position: absolute;
-  right: 5px;
-  bottom: 7px;
-  width: 55px;
-  height: 36px;
-  background-color: #0ac8ee;
+  right: 10px;
+  bottom: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: #089fbd;
+  border-radius: 5px;
   color: white;
   box-sizing: border-box;
-  border: 1px solid #0ac8ee; }
+  border: 1px solid #0ac8ee;
+  transition: all 0.2s; }
   .send:hover {
-    background-color: #0ac0e4; }
+    background-color: #078aa5; }
   .send:focus {
     outline: none; }
   .send:active {
-    border: 1px solid #96eafb;
-    bottom: 10px; }
+    border-top: 2px solid #056174; }
+
+.wrap {
+  position: absolute;
+  bottom: 10px;
+  left: 120px;
+  float: left; }
+  .wrap input {
+    position: absolute;
+    left: -9999px; }
+
+.status-slider {
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 28px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.35s;
+  background: #ddd; }
+
+.status-slider::after {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  top: 4px;
+  left: 5px;
+  border-radius: 30px;
+  transition: width 200ms ease-out, height 300ms 50ms ease-in, top 300ms 50ms ease-in, left 250ms 50ms ease-in, box-shadow 300ms ease-in;
+  background: white; }
+
+input:checked + .status-slider::after {
+  width: 26px;
+  height: 26px;
+  top: 0.5px;
+  left: 61px;
+  box-shadow: 0 0 0 0 #f2f2f2 inset;
+  border-radius: 50%;
+  background: #089fbd; }
+
+input:checked + .write {
+  width: 0; }
+
+.icon-comment, .icon-search {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transition: 0.3s; }
+
+.icon-comment {
+  bottom: 4px;
+  left: -30px; }
+
+.icon-search {
+  bottom: 4px;
+  right: -26px;
+  opacity: 0; }
+
+input:checked ~ .icon-comment {
+  opacity: 0; }
+
+input:checked ~ .icon-search {
+  opacity: 0.9; }

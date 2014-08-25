@@ -1,3 +1,10 @@
 /bootstrap-3
 /accounts-ui-bootstrap-3
-/jade
+/kadira
+/iron-router
+/iron-layout
+/blaze-layout
+/iron-core
+/iron-dynamic-template
+/spin
+/sass

@@ -2,7 +2,7 @@ var myapp = angular.module('myapp', []);
 
 myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 	//server url
-	var meteorServerURL = 'cesar2535.meteor.com';
+	var meteorServerURL = 'urlegendary.meteor.com';
 
 	$scope.comments = [];
 	$scope.currentScopeURL = null;
@@ -25,18 +25,30 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 	};
 
 	$scope.postComment = function(comment){
-		var post = ['anonymous', {'0': 0, '1': 0, '-1': 0}, comment, $scope.currentScopeURL, true];
-		ddp.connect().then(function(){
-			var postComment = ddp.call('postComment', post);
-			$scope.inputComment = "";
-		  postComment.then(function(id) {
-		    console.log("insert complete: " + id);
-		  });
+		if(comment != ""){
+			var post = ['anonymous', {'0': 0, '1': 0, '-1': 0}, comment, $scope.currentScopeURL, true];
+			ddp.connect().then(function(){
+				var postComment = ddp.call('postComment', post);
+				$scope.inputComment = "";
+			  postComment.then(function(id) {
+			    console.log("insert complete: " + id);
+			  });
+			});
+		}
+	};
+
+	$scope.keepBottom = function(elem){
+		$(elem).scrollTop($(elem).prop('scrollHeight'));
+	};
+
+	$scope.switchEvent = function(){
+		$scope.keywordFilter = '';
+		setTimeout(function() {
+			$scope.keepBottom('.wrapper');
 		});
 	};
 
 	//initial
-
 	$scope.getCurrentURL().then(function(url){
 		$scope.currentScopeURL = url;
 	});	
@@ -52,16 +64,34 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 	  	// changeDoc.comment = changeDoc.comment.replace(/\n/g, '<br>');
 	  	$scope.comments.push(changeDoc);
 	  	$scope.$apply();
+	  	$scope.keepBottom('.wrapper');
 	  });
 	});
 }]);
 
 //out of controller 
-$(document).ready(function(){
+angular.element(document).ready(function(){
 	var opts = {
   	context: $('.write-command')
   , animate: true
   , cloneClass: 'faketextarea'
 	};
 	$('.write').autogrow(opts);
+
+	$('#status').change( function(){
+		if ( $(this).is(':checked') ) 
+		{
+			$('.write').css('left', '-300px');
+			$('.send').css('right', '-50px');
+			$('.search').css('left', '10px');
+			$('.search').focus();
+		} else
+		{
+			$('.write').css('left', '10px');
+			$('.search').css('left', '-300px');
+			$('.write').focus();
+			$('.send').css('right', '10px');
+		};
+	});
+
 });

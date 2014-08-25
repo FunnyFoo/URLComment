@@ -9,4 +9,8 @@ bootstrap-3
 accounts-facebook
 accounts-twitter
 accounts-ui-bootstrap-3
+kadira
 jade
+iron-router
+spin
+sass

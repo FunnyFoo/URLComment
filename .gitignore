@@ -1,2 +1,5 @@
 meteor/packages/
 extension/node_modules
+popup.html
+stylesheets/custom.css
+*.pem
