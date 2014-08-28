@@ -64,3 +64,14 @@ $transition_length: 0.6s;
 #logo {
   height: 100%;
 }
+
+.navbar-default {
+  .navbar-nav {
+    &>li>a {
+      transition: 0.3s;
+      &:hover {
+        background: lighten(#f8f8f8, 10%);
+      }
+    }
+  }
+}
