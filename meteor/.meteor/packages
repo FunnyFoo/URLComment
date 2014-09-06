@@ -5,12 +5,12 @@
 
 standard-app-packages
 insecure
-bootstrap-3
 accounts-facebook
 accounts-twitter
-accounts-ui-bootstrap-3
 kadira
-jade
-iron-router
-spin
-sass
+sacha:spin@2.0.4
+particle4dev:sass
+iron:router
+mizzao:bootstrap-3
+rajit:accounts-ui-bootstrap-3
+mquandalle:jade
