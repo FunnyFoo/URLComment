@@ -7,10 +7,11 @@ standard-app-packages
 insecure
 accounts-facebook
 accounts-twitter
-kadira
 sacha:spin@2.0.4
 particle4dev:sass
 iron:router
 mizzao:bootstrap-3
 rajit:accounts-ui-bootstrap-3
 mquandalle:jade
+meteorhacks:kadira
+
