@@ -12,4 +12,11 @@ template(name="about")
         | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
       p
         a.btn(href="") View details »
-    .col-md-4.column
+    .col-md-8.column
+      video#example_video_1.video-js.vjs-default-skin(controls='', preload='auto', width='640', height='264', poster='http://video-js.zencoder.com/oceans-clip.png', data-setup='{"example_option":true}')
+        source(src='http://video-js.zencoder.com/oceans-clip.mp4', type='video/mp4')
+        source(src='http://video-js.zencoder.com/oceans-clip.webm', type='video/webm')
+        source(src='http://video-js.zencoder.com/oceans-clip.ogv', type='video/ogg')
+        p.vjs-no-js
+          | To view this video please enable JavaScript, and consider uppgrading to a web browser that 
+          a(href='http://videojs.com/html5-video-support', target='_blank') support HTML5 video
