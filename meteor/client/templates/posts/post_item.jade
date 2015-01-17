@@ -7,7 +7,6 @@ template(name="postItem")
         span #{domain}
       p
         | {{pluralize votes "Vote"}},
-        | submitted by #{author},
         | {{afterCreated}}
         a(href="{{pathFor 'postPage'}}") #{commentsCount} comments
         //- if ownPost
