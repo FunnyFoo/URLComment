@@ -1,0 +1,1035 @@
+/* Compass */
+/* Breakpoint */
+/* Susy */
+/* Tools */
+/* ===========================
+ * Tools/Helpers
+ * =========================== */
+/* Image replacement */
+/* line 8, ../../../sass/tools/_helpers.sass */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px;
+}
+
+/* line 15, ../../../sass/tools/_helpers.sass */
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/* Hide from both screenreaders and browsers: h5bp.com/u
+ */
+/* line 25, ../../../sass/tools/_helpers.sass */
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+/* line 33, ../../../sass/tools/_helpers.sass */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/* Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+/* line 48, ../../../sass/tools/_helpers.sass */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout
+ */
+/* line 60, ../../../sass/tools/_helpers.sass */
+.invisible {
+  visibility: hidden;
+}
+
+/* Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* line 75, ../../../sass/tools/_helpers.sass */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+/* line 79, ../../../sass/tools/_helpers.sass */
+.clearfix:after {
+  clear: both;
+}
+
+/* For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+/* line 87, ../../../sass/tools/_helpers.sass */
+.clearfix {
+  *zoom: 1;
+}
+
+/* =Layout
+ * ------------------- 
+ */
+/* line 95, ../../../sass/tools/_helpers.sass */
+.ul-list-inline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 171, ../../../sass/tools/_mixins.sass */
+.ul-list-inline li {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 17, ../../../sass/tools/_mixins.sass */
+.lt-ie8 .ul-list-inline li {
+  display: inline;
+  zoom: 1;
+}
+
+/* =Images
+ * -------------------
+ */
+/* line 101, ../../../sass/tools/_helpers.sass */
+.lazy-loaded {
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  opacity: 1;
+}
+
+/* line 105, ../../../sass/tools/_helpers.sass */
+.lazy-hidden {
+  opacity: 0;
+  background: #eee url(../images/loading.gif) no-repeat 50% 50%;
+}
+
+/* =Fonts
+ * ------------------- 
+ */
+/* Chart Colors */
+/* line 114, ../../../sass/tools/_helpers.sass */
+.f-color1 {
+  color: #dd577a;
+}
+
+/* line 116, ../../../sass/tools/_helpers.sass */
+.f-color2 {
+  color: #49aec0;
+}
+
+/* =Wordpress alignment
+ * ------------------- 
+ */
+/* line 124, ../../../sass/tools/_helpers.sass */
+.alignleft {
+  display: inline;
+  float: left;
+}
+
+/* line 127, ../../../sass/tools/_helpers.sass */
+.alignright {
+  display: inline;
+  float: right;
+}
+
+/* line 130, ../../../sass/tools/_helpers.sass */
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Base */
+/*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 9, ../../../sass/base/_normalize.sass */
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 18, ../../../sass/base/_normalize.sass */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+ * ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+/* line 29, ../../../sass/base/_normalize.sass */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 37, ../../../sass/base/_normalize.sass */
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 46, ../../../sass/base/_normalize.sass */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+/* line 55, ../../../sass/base/_normalize.sass */
+[hidden], template {
+  display: none;
+}
+
+/* Links
+ * ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 65, ../../../sass/base/_normalize.sass */
+a {
+  background: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 72, ../../../sass/base/_normalize.sass */
+a:active, a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+ * ========================================================================== */
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+/* line 83, ../../../sass/base/_normalize.sass */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 91, ../../../sass/base/_normalize.sass */
+b, strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+/* line 99, ../../../sass/base/_normalize.sass */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 107, ../../../sass/base/_normalize.sass */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 115, ../../../sass/base/_normalize.sass */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 123, ../../../sass/base/_normalize.sass */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 131, ../../../sass/base/_normalize.sass */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 137, ../../../sass/base/_normalize.sass */
+sup {
+  top: -0.5em;
+}
+
+/* line 140, ../../../sass/base/_normalize.sass */
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+ * ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+/* line 150, ../../../sass/base/_normalize.sass */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+/* line 157, ../../../sass/base/_normalize.sass */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+ * ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+/* line 167, ../../../sass/base/_normalize.sass */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 174, ../../../sass/base/_normalize.sass */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 183, ../../../sass/base/_normalize.sass */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 190, ../../../sass/base/_normalize.sass */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+ * ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+/* line 209, ../../../sass/base/_normalize.sass */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10.
+ */
+/* line 218, ../../../sass/base/_normalize.sass */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8+, and Opera
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 228, ../../../sass/base/_normalize.sass */
+button, select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 239, ../../../sass/base/_normalize.sass */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 247, ../../../sass/base/_normalize.sass */
+button[disabled], html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 254, ../../../sass/base/_normalize.sass */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 263, ../../../sass/base/_normalize.sass */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 274, ../../../sass/base/_normalize.sass */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 284, ../../../sass/base/_normalize.sass */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 293, ../../../sass/base/_normalize.sass */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 305, ../../../sass/base/_normalize.sass */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 312, ../../../sass/base/_normalize.sass */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 322, ../../../sass/base/_normalize.sass */
+legend {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9.
+ */
+/* line 330, ../../../sass/base/_normalize.sass */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 338, ../../../sass/base/_normalize.sass */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+ * ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 348, ../../../sass/base/_normalize.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 352, ../../../sass/base/_normalize.sass */
+td, th {
+  padding: 0;
+}
+
+/* ===========================
+ * Base
+ * =========================== */
+/* line 5, ../../../sass/base/_base.sass */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.5em;
+  line-height: 1.5;
+  background-color: #f1f1f1;
+}
+
+/* line 13, ../../../sass/base/_base.sass */
+a {
+  color: #dd577a;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+/* line 17, ../../../sass/base/_base.sass */
+a:hover {
+  color: #d42d58;
+}
+
+/* line 22, ../../../sass/base/_base.sass */
+::-moz-selection {
+  background: #dd577a;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 26, ../../../sass/base/_base.sass */
+::selection {
+  background: #dd577a;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* line 31, ../../../sass/base/_base.sass */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/* line 39, ../../../sass/base/_base.sass */
+ul {
+  list-style: none;
+}
+
+/* line 42, ../../../sass/base/_base.sass */
+button {
+  outline: none;
+  border: none;
+}
+
+/* ==|====================
+ * Base/Form
+ * ======================= */
+/* line 5, ../../../sass/base/_form.sass */
+input[type="text"], input[type="email"], input[type="password"], input[type="date"], input[type="search"], textarea {
+  font-size: 1em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #666;
+  padding: 0.5em;
+  border: 1px solid #bfbfbf;
+  outline: 0;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  background-color: #f7f7f7;
+}
+/* line 47, ../../../sass/tools/_mixins.sass */
+input[type="text"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="date"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #cdcdcd;
+}
+/* line 49, ../../../sass/tools/_mixins.sass */
+input[type="text"]:-moz-placeholder, input[type="email"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="date"]:-moz-placeholder, input[type="search"]:-moz-placeholder, textarea:-moz-placeholder {
+  color: #cdcdcd;
+}
+/* line 51, ../../../sass/tools/_mixins.sass */
+input[type="text"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="date"]:-ms-input-placeholder, input[type="search"]:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #cdcdcd;
+}
+/* line 17, ../../../sass/base/_form.sass */
+input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover, input[type="date"]:hover, input[type="search"]:hover, textarea:hover {
+  border-color: #a5a5a5;
+}
+/* line 19, ../../../sass/base/_form.sass */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="search"]:focus, textarea:focus {
+  border-color: #999;
+}
+
+/* Fonts */
+/* Layout */
+/* line 1, ../../../sass/layout/_spin.sass */
+#spinner {
+  height: 300px;
+}
+
+/* line 3, ../../../sass/layout/_header.sass */
+.navbar {
+  margin-bottom: 10px;
+  /* line 32, ../sass/style.scss */
+}
+/* line 6, ../../../sass/layout/_header.sass */
+.navbar .navbar-inner {
+  -moz-border-radius: 0px 0px 3px 3px;
+  border-radius: 0px 0px 3px 3px;
+}
+
+/* line 14, ../../../sass/layout/_header.sass */
+.search-container {
+  margin-top: 5px;
+}
+
+/* line 17, ../../../sass/layout/_header.sass */
+.search-box {
+  transition: width 0.6s, border-radius 0.6s, box-shadow 0.6s;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #ebebeb;
+}
+/* line 25, ../../../sass/layout/_header.sass */
+.search-box + label .search-icon {
+  color: black;
+}
+/* line 27, ../../../sass/layout/_header.sass */
+.search-box:hover {
+  color: white;
+  background: #c8c8c8;
+  box-shadow: 0 0 0 5px #3d4752;
+}
+/* line 31, ../../../sass/layout/_header.sass */
+.search-box:hover + label .search-icon {
+  color: white;
+}
+/* line 33, ../../../sass/layout/_header.sass */
+.search-box:focus {
+  transition: width 0.6s cubic-bezier(0, 1.22, 0.66, 1.39), border-radius 0.6s, background 0.6s;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding-left: 15px;
+  cursor: text;
+  width: 300px;
+  border-radius: auto;
+  background: #ebebeb;
+  color: black;
+}
+/* line 44, ../../../sass/layout/_header.sass */
+.search-box:focus + label .search-icon {
+  color: black;
+}
+/* line 46, ../../../sass/layout/_header.sass */
+.search-box:not(:focus) {
+  text-indent: -5000px;
+}
+
+/* line 50, ../../../sass/layout/_header.sass */
+#search-submit {
+  position: relative;
+  left: -5000px;
+}
+
+/* line 54, ../../../sass/layout/_header.sass */
+.search-icon {
+  position: relative;
+  left: -30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* line 60, ../../../sass/layout/_header.sass */
+.navbar-brand {
+  display: inline-block;
+  padding: 2px 20px;
+}
+
+/* line 64, ../../../sass/layout/_header.sass */
+#logo {
+  height: 100%;
+}
+
+/* line 69, ../../../sass/layout/_header.sass */
+.navbar-default .navbar-nav > li > a {
+  transition: 0.3s;
+}
+/* line 71, ../../../sass/layout/_header.sass */
+.navbar-default .navbar-nav > li > a:hover {
+  background: white;
+}
+
+/* line 1, ../../../sass/layout/_notfound.sass */
+#notfound {
+  max-width: 500px;
+  _width: 500px;
+  padding: 30px 20px 50px;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  margin: 0 auto;
+  box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+  background: #fcfcfc;
+}
+/* line 10, ../../../sass/layout/_notfound.sass */
+#notfound .notfound {
+  max-width: 380px;
+  _width: 380px;
+  margin: 0 auto;
+}
+/* line 14, ../../../sass/layout/_notfound.sass */
+#notfound ::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+/* line 18, ../../../sass/layout/_notfound.sass */
+#notfound ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+/* line 22, ../../../sass/layout/_notfound.sass */
+#notfound input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+/* line 26, ../../../sass/layout/_notfound.sass */
+#notfound h1 {
+  margin: 0 10px;
+  font-size: 50px;
+  text-align: center;
+}
+/* line 30, ../../../sass/layout/_notfound.sass */
+#notfound h1 span {
+  color: #bbb;
+}
+/* line 33, ../../../sass/layout/_notfound.sass */
+#notfound h3 {
+  margin: 1.5em 0 0.5em;
+}
+/* line 36, ../../../sass/layout/_notfound.sass */
+#notfound p {
+  margin: 1em 0;
+}
+/* line 39, ../../../sass/layout/_notfound.sass */
+#notfound ul {
+  padding: 0 0 0 40px;
+  margin: 1em 0;
+}
+/* line 44, ../../../sass/layout/_notfound.sass */
+#notfound #goog-fixurl ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 49, ../../../sass/layout/_notfound.sass */
+#notfound #goog-fixurl form {
+  margin: 0;
+}
+/* line 52, ../../../sass/layout/_notfound.sass */
+#notfound #goog-wm-qt, #notfound #goog-wm-sb {
+  border: 1px solid #bbb;
+  font-size: 16px;
+  line-height: normal;
+  vertical-align: top;
+  color: #444;
+  border-radius: 2px;
+}
+/* line 60, ../../../sass/layout/_notfound.sass */
+#notfound #goog-wm-qt {
+  width: 220px;
+  height: 20px;
+  padding: 5px;
+  margin: 5px 10px 0 0;
+  box-shadow: inset 0 1px 1px #ccc;
+}
+/* line 66, ../../../sass/layout/_notfound.sass */
+#notfound #goog-wm-qt:hover, #notfound #goog-wm-qt:focus {
+  border-color: #105cb6;
+  outline: 0;
+  color: #222;
+}
+/* line 71, ../../../sass/layout/_notfound.sass */
+#notfound #goog-wm-sb {
+  display: inline-block;
+  height: 32px;
+  padding: 0 10px;
+  margin: 5px 0 0;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #f5f5f5;
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
+  background-image: -ms-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0), #f1f1f1);
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  *overflow: visible;
+  *display: inline;
+  *zoom: 1;
+}
+/* line 89, ../../../sass/layout/_notfound.sass */
+#notfound #goog-wm-sb:hover, #notfound #goog-wm-sb:focus {
+  border-color: #aaa;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  background-color: #f8f8f8;
+}
+
+/* line 1, ../../../sass/layout/_posts.sass */
+.grid-block, .main, .post, .comments li, .comment-form {
+  background: #fff;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 10px;
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* line 14, ../../../sass/layout/_posts.sass */
+.post {
+  /* For modern browsers */
+  /* For IE 6/7 (trigger hasLayout) */
+  *zoom: 1;
+  position: relative;
+  opacity: 1;
+  transition: all 300ms 0ms ease-in;
+}
+/* line 21, ../../../sass/layout/_posts.sass */
+.post:before, .post:after {
+  content: "";
+  display: table;
+}
+/* line 24, ../../../sass/layout/_posts.sass */
+.post:after {
+  clear: both;
+}
+/* line 26, ../../../sass/layout/_posts.sass */
+.post.invisible {
+  opacity: 0;
+}
+/* line 28, ../../../sass/layout/_posts.sass */
+.post.instant {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+/* line 33, ../../../sass/layout/_posts.sass */
+.post.animate {
+  -webkit-transition: all 300ms 0ms;
+  -moz-transition: all 300ms 0ms;
+  -ms-transition: all 300ms 0ms;
+  -o-transition: all 300ms 0ms;
+  transition: all 300ms 0ms;
+}
+/* line 39, ../../../sass/layout/_posts.sass */
+.post .upvote {
+  display: block;
+  margin: 7px 12px 0 0;
+  float: left;
+}
+/* line 43, ../../../sass/layout/_posts.sass */
+.post .post-content {
+  float: left;
+}
+/* line 45, ../../../sass/layout/_posts.sass */
+.post .post-content h3 {
+  margin: 0;
+  line-height: 1.4;
+  font-size: 18px;
+}
+/* line 49, ../../../sass/layout/_posts.sass */
+.post .post-content h3 a {
+  display: inline-block;
+  margin-right: 5px;
+}
+/* line 52, ../../../sass/layout/_posts.sass */
+.post .post-content h3 span {
+  font-weight: normal;
+  font-size: 14px;
+  display: inline-block;
+  color: #aaaaaa;
+}
+/* line 57, ../../../sass/layout/_posts.sass */
+.post .post-content p {
+  margin: 0;
+}
+/* line 59, ../../../sass/layout/_posts.sass */
+.post .discuss {
+  display: block;
+  float: right;
+  margin-top: 7px;
+}
+
+/* line 64, ../../../sass/layout/_posts.sass */
+.posts .spinner-container {
+  position: relative;
+  height: 100px;
+}
+
+/* line 68, ../../../sass/layout/_posts.sass */
+.load-more {
+  display: block;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  margin-bottom: 10px;
+}
+/* line 80, ../../../sass/layout/_posts.sass */
+.load-more:hover {
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* line 1, ../../../sass/layout/_comments.sass */
+.comments {
+  list-style-type: none;
+  margin: 0;
+}
+/* line 4, ../../../sass/layout/_comments.sass */
+.comments li h4 {
+  font-size: 16px;
+  margin: 0;
+}
+/* line 7, ../../../sass/layout/_comments.sass */
+.comments li h4 .date {
+  font-size: 12px;
+  font-weight: normal;
+}
+/* line 10, ../../../sass/layout/_comments.sass */
+.comments li h4 a {
+  font-size: 12px;
+}
+/* line 12, ../../../sass/layout/_comments.sass */
+.comments li p:last-child {
+  margin-bottom: 0;
+}
+
+/* Modules */
+/* line 1, ../../../sass/modules/_dropdown.sass */
+.dropdown-menu span {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  line-height: 20px;
+  color: #bbb;
+  white-space: nowrap;
+}
+
+/* line 1, ../../../sass/modules/_jumbotron.sass */
+.jumbotron {
+  text-align: center;
+}
+
+/* line 4, ../../../sass/modules/_jumbotron.sass */
+.jumbotron h2 {
+  font-size: 60px;
+  font-weight: 100;
+}

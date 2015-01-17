@@ -1,0 +1,9 @@
+template(name='postPage')
+  +postItem
+  ul.comments
+    each comments
+      +commentItem
+  if currentUser
+    +commentSubmit
+  else
+    p Please log in to leave a comment.
