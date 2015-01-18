@@ -1,6 +1,5 @@
-meteor/packages/
-extension/node_modules
-popup.html
-stylesheets/custom.css
+node_modules
 .sass-cache
+
+extension/build
 *.pem

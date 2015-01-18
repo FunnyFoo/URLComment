@@ -1,58 +1,100 @@
 // Include gulp
-var gulp = require('gulp'); 
+var gulp = require('gulp');
 
 // Include Our Plugins
 var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
+var compass = require('gulp-compass');
+var gutil = require('gulp-util');
+var notify = require('gulp-notify');
+var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var jade = require('gulp-jade');
 
+var del = require('del');
+
+var srcFiles = {
+  main: 'src/**',
+  jade: 'src/views/**/*.jade',
+  sass: 'src/sass/**/*.sass',
+  js: 'src/scripts/**/*.js',
+  asset: 'src/assets/**'
+};
+
+var buildDir = {
+  main: 'build',
+  view: 'build/views',
+  style: 'build/stylesheets',
+  script: 'build/scripts'
+};
+
+gulp.task('clear', function() {
+  del.sync(buildDir.main);
+});
+
+gulp.task('lib', function() {
+  return gulp.src(srcFiles.asset, { base: 'src/assets'})
+    .pipe(gulp.dest(buildDir.main));
+});
 
 // Lint Task
 gulp.task('lint', function() {
-    return gulp.src('js/*.js')
-        .pipe(jshint())
-        .pipe(jshint.reporter('default'));
+  return gulp.src(srcFiles.js)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(sourcemaps.init())
+    .pipe(concat('app.js'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify({ compress: true }))
+    .pipe(sourcemaps.write({
+      addComment: true,
+      sourceRoot: 'src/scripts'
+    }))
+    .pipe(gulp.dest(buildDir.script));
 });
 
-// Compile Our Sass
-gulp.task('sass', function() {
-    return gulp.src('sass/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('stylesheets'));
+// Compass
+gulp.task('compass', function() {
+  var stream = gulp.src(srcFiles.sass)
+    .pipe(compass({
+      css: 'build/stylesheets',
+      sass: 'src/sass'
+    })).on('error', function (err) {
+      gutil.log(gutil.colors.yellow(err.message));
+      notify.onError({
+        title: 'Gulp',
+        message: "Error: <%= error.message %>",
+        sound: 'Pop'
+      }) (err);
+      notify(err.message);
+      stream.end();
+    })
+    .pipe(gulp.dest(buildDir.style));
+
+  return stream;
 });
 
-// Concatenate & Minify JS
-// gulp.task('scripts', function() {
-//     return gulp.src('js/*.js')
-//         .pipe(concat('all.js'))
-//         .pipe(gulp.dest('dist'))
-//         .pipe(rename('all.min.js'))
-//         .pipe(uglify())
-//         .pipe(gulp.dest('dist'));
-// });
+// Jade
+gulp.task('jade', function() {
+  var YOUR_LOCALS = {};
+
+  return gulp.src(srcFiles.jade)
+    .pipe(jade({
+      pretty: true,
+    }))
+    .pipe(gulp.dest(buildDir.main));
+});
 
 // Watch Files For Changes
 gulp.task('watch', function() {
-    // gulp.watch('js/*.js', ['lint', 'scripts']);
-    gulp.watch('sass/*.scss', ['sass']);
-    gulp.watch('*.jade', ['jadehtml']);
+  gulp.watch(srcFiles.asset, ['lib']);
+  gulp.watch(srcFiles.sass, ['sass']);
+  gulp.watch(srcFiles.js, ['lint']);
+  gulp.watch(srcFiles.jade, ['jade']);
 });
 
-
-//jade complie to Html
-gulp.task('jadehtml', function() {
-  var YOUR_LOCALS = {};
-
-  gulp.src('*.jade')
-    .pipe(jade({
-        pretty: true,
-    }))
-    .pipe(gulp.dest('./'))
-});
-
-
+gulp.task('compile', ['jade', 'compass', 'lint']);
+gulp.task('build', ['clear', 'compile', 'lib']);
 // Default Task
-gulp.task('default', ['jadehtml', 'sass', 'watch']);
+gulp.task('default', ['build', 'watch']);

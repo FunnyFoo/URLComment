@@ -25,7 +25,7 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 	};
 
 	$scope.postComment = function(comment){
-		if(comment != ""){
+		if(comment !== ""){
 			var post = ['anonymous', {'0': 0, '1': 0, '-1': 0}, comment, $scope.currentScopeURL, true];
 			ddp.connect().then(function(){
 				var postComment = ddp.call('postComment', post);
@@ -72,26 +72,24 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 //out of controller 
 angular.element(document).ready(function(){
 	var opts = {
-  	context: $('.write-command')
-  , animate: true
-  , cloneClass: 'faketextarea'
+  	context: $('.write-command'), 
+  	animate: true, 
+  	cloneClass: 'faketextarea'
 	};
+
 	$('.write').autogrow(opts);
 
 	$('#status').change( function(){
-		if ( $(this).is(':checked') ) 
-		{
+		if ( $(this).is(':checked') )  {
 			$('.write').css('left', '-300px');
 			$('.send').css('right', '-50px');
 			$('.search').css('left', '10px');
 			$('.search').focus();
-		} else
-		{
+		} else {
 			$('.write').css('left', '10px');
 			$('.search').css('left', '-300px');
 			$('.write').focus();
 			$('.send').css('right', '10px');
-		};
+		}
 	});
-
 });

@@ -14,5 +14,5 @@ myapp.directive('ngEnter', function () {
         }
       });
     }
-  }
+  };
 });
