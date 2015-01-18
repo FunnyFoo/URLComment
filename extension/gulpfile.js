@@ -34,7 +34,7 @@ gulp.task('clear', function() {
 });
 
 gulp.task('lib', function() {
-  return gulp.src(srcFiles.asset, { base: 'src/assets'})
+  return gulp.src(srcFiles.asset, { base: 'src/assets' })
     .pipe(gulp.dest(buildDir.main));
 });
 
