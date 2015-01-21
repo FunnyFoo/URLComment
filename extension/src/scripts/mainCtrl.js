@@ -18,8 +18,10 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 			active: true,
 			lastFocusedWindow: true
 		}, function (tabArray) {
+			var a = document.createElement('a');
+			a.href = tabArray[0].url;
 			$scope.currentScopeTitle = tabArray[0].title;
-			return deferred.resolve(tabArray[0].url);
+			return deferred.resolve(a.origin);
 		});
 		return deferred.promise;
 	};
