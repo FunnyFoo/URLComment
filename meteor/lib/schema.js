@@ -1,6 +1,10 @@
 var Schema = {};
 
 Schema.Post = new SimpleSchema({
+  domain: {
+    type: String,
+    label: "Domain Name"
+  },
   url: {
     type: String,
     label: "URL"
@@ -12,8 +16,8 @@ Schema.Post = new SimpleSchema({
   commentsCount: {
     type: Number
   },
-  submitted: {
-    type: Number,
+  submitted: {  // ISO format
+    type: String,
     label: "Submitted Date"
   },
   votes: {
@@ -40,8 +44,8 @@ Schema.Comment = new SimpleSchema({
     type: String,
     label: "Content"
   },
-  submitted: {
-    type: Number,
+  submitted: {  // ISO format
+    type: String,
     label: "Submitted Date"
   }
 });

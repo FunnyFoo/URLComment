@@ -74,6 +74,26 @@ Meteor.methods({
     if (! affected) {
       throw new Meteor.Error('invalid', "You weren't able to upvote that post");
     }
+  },
+  checkPost: function (postAttributes) {
+    check(postAttributes, {
+      domain: String,
+      url: String,
+      title: String
+    });
+
+    var post = Posts.findOne({domain: postAttributes.domain});
+    if (!post) {
+      post = _.extend(postAttributes, {
+        submitted: new Date().toISOString(),
+        commentsCount: 0,
+        votes: 0
+      });
+
+      post._id = Posts.insert(post);
+    }
+
+    return post._id;
   }
 });
 
