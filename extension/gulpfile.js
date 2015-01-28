@@ -49,7 +49,7 @@ gulp.task('lint', function() {
     .pipe(uglify({ compress: true }))
     .pipe(sourcemaps.write({
       addComment: true,
-      sourceRoot: 'src/scripts'
+      sourceRoot: 'src'
     }))
     .pipe(gulp.dest(buildDir.script));
 });
@@ -89,7 +89,7 @@ gulp.task('jade', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
   gulp.watch(srcFiles.asset, ['lib']);
-  gulp.watch(srcFiles.sass, ['sass']);
+  gulp.watch(srcFiles.sass, ['compass']);
   gulp.watch(srcFiles.js, ['lint']);
   gulp.watch(srcFiles.jade, ['jade']);
 });
