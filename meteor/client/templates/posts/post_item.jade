@@ -3,7 +3,7 @@ template(name="postItem")
     a.btn.btn-default.upvote(href="#", class="{{upvotedClass}}") ⬆
     .post-content
       h3
-        a(href="{{link}}", target='_blank') #{title}
+        a(href="{{url}}", target='_blank') #{title}
         span #{domain}
       p
         | {{pluralize votes "Vote"}},
