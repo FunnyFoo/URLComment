@@ -173,6 +173,16 @@
   margin-right: auto;
 }
 
+/* line 135, ../../../sass/tools/_helpers.sass */
+.txtleft {
+  text-align: left;
+}
+
+/* line 137, ../../../sass/tools/_helpers.sass */
+.txtright {
+  text-align: right;
+}
+
 /* Base */
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 /**
