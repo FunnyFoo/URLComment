@@ -13,7 +13,7 @@ if (Posts.find().count() === 0) {
   var sacha = Meteor.users.findOne(sachaId);
 
   var telescopeId = Posts.insert({
-    title: 'SachaGreif.com',
+    title: 'sachagreif.com',
     url: 'http://sachagreif.com',
     submitted: new Date(now - 7 * 3600 * 1000).getTime(),
     commentsCount: 2,
@@ -38,7 +38,7 @@ if (Posts.find().count() === 0) {
   });
 
   Posts.insert({
-    title: 'Meteor',
+    title: 'www.meteor.com',
     url: 'https://www.meteor.com',
     submitted: new Date(now - 10 * 3600 * 1000).getTime(),
     commentsCount: 0,
@@ -47,7 +47,7 @@ if (Posts.find().count() === 0) {
   });
 
   Posts.insert({
-    title: 'Discover Meteor',
+    title: 'www.discovermeteor.com',
     url: 'https://www.discovermeteor.com',
     submitted: new Date(now - 12 * 3600 * 1000).getTime(),
     commentsCount: 0,

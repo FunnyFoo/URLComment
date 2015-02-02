@@ -1,10 +1,6 @@
 var Schema = {};
 
 Schema.Post = new SimpleSchema({
-  domain: {
-    type: String,
-    label: "Domain Name"
-  },
   url: {
     type: String,
     label: "URL"
