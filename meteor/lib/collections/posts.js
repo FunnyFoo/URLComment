@@ -77,12 +77,11 @@ Meteor.methods({
   },
   checkPost: function (postAttributes) {
     check(postAttributes, {
-      domain: String,
       url: String,
       title: String
     });
 
-    var post = Posts.findOne({domain: postAttributes.domain});
+    var post = Posts.findOne({title: postAttributes.title});
     if (!post) {
       post = _.extend(postAttributes, {
         submitted: new Date().toISOString(),
