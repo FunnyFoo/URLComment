@@ -24,18 +24,18 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
     return deferred.promise;
   };
 
-  $scope.postComment = function(comment){
-    if(comment !== ""){
-      var post = ['anonymous', {'0': 0, '1': 0, '-1': 0}, comment, $scope.currentScopeURL, true];
-      ddp.connect().then(function(){
-        var postComment = ddp.call('postComment', post);
-        $scope.inputComment = "";
-        postComment.then(function(id) {
-          console.log("insert complete: " + id);
-        });
-      });
-    }
-  };
+  // $scope.postComment = function(comment){
+  //   if(comment !== ""){
+  //     var post = ['anonymous', {'0': 0, '1': 0, '-1': 0}, comment, $scope.currentScopeURL, true];
+  //     ddp.connect().then(function(){
+  //       var postComment = ddp.call('postComment', post);
+  //       $scope.inputComment = "";
+  //       postComment.then(function(id) {
+  //         console.log("insert complete: " + id);
+  //       });
+  //     });
+  //   }
+  // };
 
   $scope.keepBottom = function(elem){
     $(elem).scrollTop($(elem).prop('scrollHeight'));
@@ -53,13 +53,14 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
     var a = document.createElement('a');
     a.href = url;
     $scope.currentScopeURL = a.origin;
-
     //ddp client subscribe data from meteor server
     ddp.connect().then(function() {
-      var checkPost = ddp.call('checkPost', [{
+      var post = {
         url: $scope.currentScopeURL,
-        title: a.domain
-      }]);
+        title: a.hostname
+      };
+
+      var checkPost = ddp.call('checkPost', [post]);
 
       checkPost.then(function (postId) {
         ddp.subscribe('comments', [postId]).fail(function (err) {
@@ -69,6 +70,7 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
         ddp.watch('comments', function(changeDoc, message){
           // changeDoc.comment = changeDoc.comment.replace(/\n/g, '<br>');
           $scope.comments.push(changeDoc);
+          console.log($scope.comments);
           $scope.$apply();
           $scope.keepBottom('.wrapper');
         });

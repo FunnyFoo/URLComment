@@ -84,7 +84,7 @@ Meteor.methods({
     var post = Posts.findOne({title: postAttributes.title});
     if (!post) {
       post = _.extend(postAttributes, {
-        submitted: new Date().toISOString(),
+        submitted: new Date().getTime(),
         commentsCount: 0,
         votes: 0
       });

@@ -12,10 +12,15 @@ html(leng='en', ng-app='myapp', ng-csp)
         #title-name {{currentScopeTitle}}
         .total Total: {{comments.length}}
     .wrapper
-      .command(ng-repeat='comment in comments | filter: keywordFilter')
-        pre.content {{comment.comment}}
-        .time-stamp {{comment.date}}
-    .write-command
+      .comments(ng-repeat='comment in comments | filter: keywordFilter')
+        pre.content {{comment.body}}
+        .info 
+          span posted on 
+          span.submitted {{comment.submitted | date: 'yyyy-MM-dd HH:mm:ss'}} 
+          span by 
+          span.author {{comment.author}}
+      .empty(ng-if="comments.length == 0 || !comments")
+    .write-comment
       textarea.write(placeholder='Leave a comment.....', ng-model='inputComment', ng-enter='postComment(inputComment)' , rows="2" , wrap="hard")
       input.search(placeholder="Search for....", ng-model='keywordFilter', ng-keydown='keepBottom(".wrapper")')
       button.send(ng-click='postComment(inputComment)') SEND
