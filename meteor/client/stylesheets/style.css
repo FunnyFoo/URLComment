@@ -1030,20 +1030,28 @@ input.search-box:not(:focus) {
   margin: 0;
 }
 /* line 4, ../../../sass/layout/_comments.sass */
+.comments li {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+/* line 6, ../../../sass/layout/_comments.sass */
+.comments li h4, .comments li p {
+  color: #fff;
+}
+/* line 8, ../../../sass/layout/_comments.sass */
 .comments li h4 {
   font-size: 16px;
   margin: 0;
 }
-/* line 7, ../../../sass/layout/_comments.sass */
+/* line 11, ../../../sass/layout/_comments.sass */
 .comments li h4 .date {
   font-size: 12px;
   font-weight: normal;
 }
-/* line 10, ../../../sass/layout/_comments.sass */
+/* line 14, ../../../sass/layout/_comments.sass */
 .comments li h4 a {
   font-size: 12px;
 }
-/* line 12, ../../../sass/layout/_comments.sass */
+/* line 16, ../../../sass/layout/_comments.sass */
 .comments li p:last-child {
   margin-bottom: 0;
 }
