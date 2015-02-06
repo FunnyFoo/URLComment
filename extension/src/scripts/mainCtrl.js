@@ -10,7 +10,7 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
   $scope.inputComment = "";
 
   //test url
-  var ddp = new MeteorDdp('ws://' + meteorServerURL + '/websocket');
+  var asteroid = new Asteroid(meteorServerURL);
 
   $scope.getCurrentURL = function(){
     var deferred = $q.defer();
@@ -48,43 +48,50 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
     });
   };
 
+  // $scope.loginWith = {
+  //   facebook: function () {
+  //     console.log('facebook');
+  //     asteroid.loginWithFacebook()
+  //     .then(function (successRes) {
+  //       console.log(successRes);
+  //     });
+  //   }
+  // };
+
   //initial
   $scope.getCurrentURL().then(function(url){
     var a = document.createElement('a');
     a.href = url;
     $scope.currentScopeURL = a.origin;
-    //ddp client subscribe data from meteor server
-    ddp.connect().then(function() {
-      var post = {
-        url: $scope.currentScopeURL,
-        title: a.hostname
-      };
 
-      var checkPost = ddp.call('checkPost', [post]);
+    var post = {
+      url: $scope.currentScopeURL,
+      title: a.hostname
+    };
+    console.log(post);
+    var checkPost = asteroid.call('checkPost', post);
+    console.log(checkPost);
 
-      checkPost.then(function (postId) {
-        ddp.subscribe('comments', [postId]).fail(function (err) {
-          console.log('Fail to subscribe data from meteor server.');
-        });
-        console.info('Connected!');
-        ddp.watch('comments', function(changeDoc, message){
-          // changeDoc.comment = changeDoc.comment.replace(/\n/g, '<br>');
-          $scope.comments.push(changeDoc);
-          console.log($scope.comments);
-          $scope.$apply();
-          $scope.keepBottom('.wrapper');
-        });
+    checkPost.result.then(function (postId) {
+      console.info('result');
+      console.log(postId);
+      asteroid.subscribe('comments', postId);
+      var comments = asteroid.getCollection('comments');
+      var commentsOnPost = comments.reactiveQuery({author: 'Cesar Chen'});
+      console.log(comments);
+      console.log(commentsOnPost);
+
+      commentsOnPost.on('change', function () {
+        $scope.comments = commentsOnPost.result;
+        $scope.$apply();
+        $scope.keepBottom('.wrapper');
+        console.log($scope.comments);
       });
-      // ddp.subscribe('myBookPosts', [$scope.currentScopeURL]).fail(function(err) {
-      //   console.log('Fail to subscribe data from meteor server.');
-      // });   
-      // console.log('Connected!');
-      // ddp.watch('myBookPosts', function(changeDoc, message){
-      //   // changeDoc.comment = changeDoc.comment.replace(/\n/g, '<br>');
-      //   $scope.comments.push(changeDoc);
-      //   $scope.$apply();
-      //   $scope.keepBottom('.wrapper');
-      // });
+    });
+
+    checkPost.updated.then(function (res) {
+      console.info('updated');
+      console.log(res);
     });
   });
 }]);

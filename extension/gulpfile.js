@@ -49,7 +49,7 @@ gulp.task('lint', function() {
     .pipe(uglify({ compress: true }))
     .pipe(sourcemaps.write({
       addComment: true,
-      sourceRoot: 'src'
+      sourceRoot: 'src/scripts'
     }))
     .pipe(gulp.dest(buildDir.script));
 });
