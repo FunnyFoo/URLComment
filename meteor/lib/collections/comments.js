@@ -16,7 +16,7 @@ Meteor.methods({
 
     comment = _.extend(commentAttributes, {
       userId: user._id,
-      author: user.username,
+      author: user.profile.name,
       submitted: new Date().getTime()
     });
 
@@ -27,7 +27,7 @@ Meteor.methods({
     comment._id = Comments.insert(comment);
 
     // now create a notification, informing the user that there's been a comment
-    createCommentNotification(comment);
+    // createCommentNotification(comment);
 
     return comment._id;
   }
