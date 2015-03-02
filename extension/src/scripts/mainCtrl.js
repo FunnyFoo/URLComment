@@ -2,7 +2,7 @@ var myapp = angular.module('myapp', []);
 
 myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
   //server url
-  var meteorServerURL = 'localhost:3000';
+  var meteorServerURL = 'urlegendary.meteor.com';
 
   $scope.comments = [];
   $scope.currentScopeURL = null;

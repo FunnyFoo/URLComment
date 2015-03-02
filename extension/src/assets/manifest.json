@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "URL Comment",
-  "description": "",
+  "description": "Comment on the web",
   "version": "1.0",
   "icons": {
     "16": "images/icon16.png",
