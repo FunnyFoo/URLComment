@@ -23,7 +23,7 @@ html(leng='en', ng-app='myapp', ng-csp)
     .write-comment
       textarea.write(placeholder='Leave a comment.....', ng-model='inputComment', ng-enter='postComment(inputComment)' , rows="2" , wrap="hard")
       input.search(placeholder="Search for....", ng-model='keywordFilter', ng-keydown='keepBottom(".wrapper")')
-      button.send(ng-click='loginWith.facebook()') SEND
+      button.send(ng-click='postComment(inputComment)') SEND
       .wrap
         input#status(type='checkbox' name="status" value="search" ng-click='switchEvent()')
         label.status-slider(for='status')

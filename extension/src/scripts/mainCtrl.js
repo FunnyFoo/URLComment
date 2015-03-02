@@ -11,6 +11,7 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
 
   //test url
   var asteroid = new Asteroid(meteorServerURL);
+  var currentPostId = undefined;
 
   $scope.getCurrentURL = function(){
     var deferred = $q.defer();
@@ -24,18 +25,19 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
     return deferred.promise;
   };
 
-  // $scope.postComment = function(comment){
-  //   if(comment !== ""){
-  //     var post = ['anonymous', {'0': 0, '1': 0, '-1': 0}, comment, $scope.currentScopeURL, true];
-  //     ddp.connect().then(function(){
-  //       var postComment = ddp.call('postComment', post);
-  //       $scope.inputComment = "";
-  //       postComment.then(function(id) {
-  //         console.log("insert complete: " + id);
-  //       });
-  //     });
-  //   }
-  // };
+  $scope.postComment = function(comment){
+    if(comment !== ""){
+      var commentAttributes = {
+        postId: currentPostId,
+        body: comment
+      };
+      var postComment = asteroid.call('commentByAnonymous', commentAttributes);
+      postComment.result.then(function (commentId) {
+        console.log(commentId);
+        $scope.inputComment = "";
+      });
+    }
+  };
 
   $scope.keepBottom = function(elem){
     $(elem).scrollTop($(elem).prop('scrollHeight'));
@@ -76,8 +78,9 @@ myapp.controller('mainCtrl', ['$scope', '$q', function($scope, $q){
       console.info('result');
       console.log(postId);
       asteroid.subscribe('comments', postId);
+      currentPostId = postId;
       var comments = asteroid.getCollection('comments');
-      var commentsOnPost = comments.reactiveQuery({author: 'Cesar Chen'});
+      var commentsOnPost = comments.reactiveQuery({});
       console.log(comments);
       console.log(commentsOnPost);
 
