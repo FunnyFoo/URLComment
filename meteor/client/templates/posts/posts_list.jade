@@ -1,9 +1,0 @@
-template(name="postsList")
-  .posts
-    each postsWithRank
-      +postItem
-    if nextPath
-      a.load-more(href="{{nextPath}}") Load more
-    else
-      unless ready
-        +spinner

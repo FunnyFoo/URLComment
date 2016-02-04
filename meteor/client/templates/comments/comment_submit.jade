@@ -1,8 +1,0 @@
-template(name='commentSubmit')
-  form.comment-form.form(name='comment')
-    .form-group(class="{{errorClass 'body'}}")
-      .controls
-        label(for='body') Comment on this post
-        textarea#body.form-control(name='body', rows='3')
-        span.help-block {{errorMessage 'body'}}
-    button.btn.btn-primary(type='submit') Add Comment
