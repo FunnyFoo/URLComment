@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { afterCreated } from '/libs/utils'
+import { afterCreated, pluralize } from '/libs/utils'
 
 export default class Post extends Component {
   constructor(props) {
@@ -48,16 +48,16 @@ export default class Post extends Component {
     const newPos = post._rank * 80
     const attrs = {}
     if (typeof post.position === 'undefined') {
-      attrs.className = 'post invisible'
+      // attrs.className = 'Post invisible'
     } else {
       const delta = post.position - newPos
       attrs.style = { top: `${delta}px` }
-      if (delta === 0) attrs.className = 'post animate'
+      if (delta === 0) attrs.className = 'Post animate'
     }
 
-    Meteor.setTimeout(function () {
-      Positions.upsert({postId: post._id}, {$set: {position: newPos}})
-    });
+    // Meteor.setTimeout(function () {
+    //   Positions.upsert({postId: post._id}, {$set: {position: newPos}})
+    // });
 
     return attrs
   }

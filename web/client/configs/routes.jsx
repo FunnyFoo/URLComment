@@ -4,6 +4,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router'
 import { mount } from 'react-mounter'
 
 import MainLayout from '../components/layout/index.jsx'
+import PostsList from '../containers/postslist'
 
 export default function (context, actions) {
   const MainLayoutCtx = injectDeps(context, actions)(MainLayout)
@@ -11,7 +12,7 @@ export default function (context, actions) {
   FlowRouter.route('/', {
     name: 'home',
     action() {
-      mount(MainLayoutCtx, { content: () => null })
+      mount(MainLayoutCtx, { content: () => <PostsList /> })
     }
   })
 

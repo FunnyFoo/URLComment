@@ -12,3 +12,8 @@ export function afterCreated(time) {
   else if (minutes) return (minutes === 1) ? minutes + ' minute' : minutes + ' minutes'
   else return (seconds === 1) ? seconds + ' second' : seconds + ' seconds'
 }
+
+export function pluralize(n, thing) {
+  if (n <= 1) return `${n} ${thing}`
+  else return `${n} ${thing}s`
+}
