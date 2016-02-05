@@ -14,4 +14,11 @@ export default function (context, actions) {
       mount(MainLayoutCtx, { content: () => null })
     }
   })
+
+  FlowRouter.route('/posts/:postId', {
+    name: 'post',
+    action() {
+      mount(MainLayoutCtx, { content: () => null })
+    }
+  })
 }
