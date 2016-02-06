@@ -10,7 +10,7 @@ export default class Post extends Component {
     const { postId, title, url, submitted, votes, commentsCount } = this.props
     return (
       <div className="Post" {...this.getAttrs()}>
-        <a className={`btn btn-default upvote ${this.getUpvotedClass()}`} onClick>⬆</a>
+        <a className={`Post-upvote btn btn-default ${this.getUpvotedClass()}`} onClick>⬆</a>
         <div className="Post-content">
           <h3>
             <a href={url} target="_blank">{title}</a>

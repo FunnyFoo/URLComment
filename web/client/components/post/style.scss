@@ -1,3 +1,5 @@
+@import "../../styles/_btn";
+
 .Post {
   background: linear-gradient(rgba(200, 200, 200, 0.3), rgba(200, 200, 200, 0.3));
   padding: 10px;
@@ -64,6 +66,12 @@
       }
     }
   }
+}
+
+.Post-upvote {
+  display: block;
+  margin: 7px 12px 0 0;
+  float: left;
 }
 
 .Post-discuss {
