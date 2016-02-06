@@ -5,6 +5,8 @@ import { mount } from 'react-mounter'
 
 import MainLayout from '../components/layout/index.jsx'
 import PostsList from '../containers/postslist'
+import Post from '../containers/post'
+import CommentsList from '../containers/commentslist'
 
 export default function (context, actions) {
   const MainLayoutCtx = injectDeps(context, actions)(MainLayout)
@@ -18,8 +20,13 @@ export default function (context, actions) {
 
   FlowRouter.route('/posts/:postId', {
     name: 'post',
-    action() {
-      mount(MainLayoutCtx, { content: () => null })
+    action({ postId }) {
+      mount(MainLayoutCtx, { content: () => (
+        <div>
+          <Post postId={postId} />
+          <CommentsList postId={postId} />
+        </div>
+      )})
     }
   })
 }

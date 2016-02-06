@@ -10,14 +10,14 @@ export default class Post extends Component {
     const { postId, title, url, submitted, votes, commentsCount } = this.props
     return (
       <div className="Post" {...this.getAttrs()}>
-        <a className={`Post-upvote btn btn-default ${this.getUpvotedClass()}`} onClick>⬆</a>
+        <a className={`Post-upvote btn btn-default ${this.getUpvotedClass()}`}>⬆</a>
         <div className="Post-content">
           <h3>
             <a href={url} target="_blank">{title}</a>
             <span>{this.getDomain(url)}</span>
           </h3>
           <p>
-            {`${pluralize(votes, "Vote")}, ${afterCreated(submitted)}`}
+            {`${pluralize(votes, "Vote")}, ${afterCreated(submitted)} ago `}
             <a href={`/posts/${postId}`}>{pluralize(commentsCount, "comment")}</a>
           </p>
         </div>

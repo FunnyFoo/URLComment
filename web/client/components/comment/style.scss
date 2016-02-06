@@ -1,0 +1,25 @@
+.Comment {
+  background: linear-gradient(rgba(200, 200, 200, 0.3), rgba(200, 200, 200, 0.3));
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+
+  h4, p {
+    color: #000;
+  }
+
+  h4 {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.Comment-date {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.Comment-body:last-child {
+  margin-bottom: 0;
+}
