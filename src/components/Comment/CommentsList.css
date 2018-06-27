@@ -1,0 +1,8 @@
+.comments-list {
+  height: 372px;
+  overflow: auto;
+}
+
+.comments-list > .list-end {
+  visibility: hidden;
+}

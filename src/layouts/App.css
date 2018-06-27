@@ -1,0 +1,50 @@
+.icon {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.icon > label {
+  color: #0ac8ee;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.icon > input {
+  background-color: #0ac8ee;
+  color: #ffffff;
+  border: 0;
+  padding: 5px 10px;
+  flex: 1;
+}
+
+.title {
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0 10px;
+  width: 300px;
+  border-bottom: 1px solid #0ac8ee;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  line-height: 1.7em;
+  font-size: 14px;
+  color: $blue;
+}
+
+.title > .text {
+  display: inline-block;
+  max-width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title > .total {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 8pt;
+  color: #b4b4b4;
+}

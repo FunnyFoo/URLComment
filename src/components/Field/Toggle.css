@@ -1,0 +1,73 @@
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.toggle > input {
+  display: none;
+}
+
+.toggle > .slider {
+  display: block;
+  position: relative;
+  width: 90px;
+  height: 28px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.35s;
+  background: #ddd;
+  order: 1;
+}
+
+.toggle > .slider::after {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  transition: width 200ms ease-out, height 300ms 50ms ease-in, top 300ms 50ms ease-in, left 250ms 50ms ease-in, box-shadow 300ms ease-in;
+  background: white;
+  /* box-shadow: 0 0 0 1.5em #f2f2f2 inset; */
+}
+
+.toggle > input[type='checkbox']:checked + .slider::after {
+  top: 0.5px;
+  left: 61px;
+  width: 26px;
+  height: 26px;
+  box-shadow: 0 0 0 0 #f2f2f2 inset;
+  border-radius: 50%;
+  background: #00afd5;
+}
+
+.toggle > .svg-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px;
+  transition-duration: 0.3s;
+}
+
+.icon-comment {
+  order: 0;
+  bottom: 4px;
+  left: -30px;
+}
+
+.icon-search {
+  order: 2;
+  right: -26px;
+  bottom: 4px;
+  opacity: 0;
+}
+
+.toggle > input[type='checkbox']:checked ~ .icon-comment {
+  opacity: 0;
+}
+
+.toggle > input[type='checkbox']:checked ~ .icon-search {
+  opacity: 0.9;
+}

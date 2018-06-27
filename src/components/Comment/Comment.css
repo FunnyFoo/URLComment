@@ -1,0 +1,34 @@
+.comment {
+  display: block;
+  max-height: 150px;
+  overflow: auto;
+  border-radius: 3px;
+  box-sizing: border-box;
+  border-left: 3px solid #57ffff;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  background-color: #fff;
+}
+
+.comment > .content {
+  display: block;
+  text-align: left;
+  color: #4c4c4c;
+  word-wrap: break-word;
+}
+
+.comment > .info {
+  font-size: 12px;
+  text-align: right;
+}
+
+.comment > .info > .submitted {
+  font-style: italic;
+  color: #b4b4b4;
+}
+
+.comment > .info > .author {
+  font-weight: bold;
+  color: #eb5f3a;
+}
