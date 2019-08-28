@@ -2,20 +2,20 @@
   "name": "url-comments",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "date-fns": "^1.29.0",
-    "firebase": "^5.1.0",
-    "lodash": "^4.17.10",
-    "normalize.css": "^8.0.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-scripts": "2.0.0-next.b2fd8db8"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "date-fns": "^2.0.1",
+    "firebase": "^6.4.2",
+    "lodash": "^4.17.15",
+    "normalize.css": "^8.0.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-scripts": "3.1.1"
   },
   "browserslist": {
     "development": [
