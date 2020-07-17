@@ -1,30 +1,27 @@
-import * as firebase from 'firebase/app'
-import 'firebase/firestore'
+import * as firebase from "firebase/app";
+import "firebase/firestore";
 
-const { Timestamp } = firebase.firestore
+const { Timestamp } = firebase.firestore;
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
   authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID
-}
+  projectId: process.env.REACT_APP_PROJECT_ID,
+};
 
-firebase.initializeApp(config)
+firebase.initializeApp(config);
 
-const firestoreSettings = { timestampsInSnapshots: true }
+const db = firebase.firestore();
 
-const db = firebase.firestore()
-db.settings(firestoreSettings)
+const postsRef = db.collection("posts");
+const commentsRef = db.collection("comments");
 
-const postsRef = db.collection('posts')
-const commentsRef = db.collection('comments')
-
-const checkPost = url => {
-  const query = postsRef.where('url', '==', url)
-  return query.get().then(querySnapshot => {
-    return { empty: querySnapshot.empty, snapshot: querySnapshot }
-  })
-}
+const checkPost = (url) => {
+  const query = postsRef.where("url", "==", url);
+  return query.get().then((querySnapshot) => {
+    return { empty: querySnapshot.empty, snapshot: querySnapshot };
+  });
+};
 
 export const writePost = (title, url) => {
   return checkPost(url).then(({ empty, snapshot }) => {
@@ -32,33 +29,33 @@ export const writePost = (title, url) => {
       const data = {
         title,
         url,
-        submitted: Timestamp.now()
-      }
-      return postsRef.add(data).then(docRef => ({
+        submitted: Timestamp.now(),
+      };
+      return postsRef.add(data).then((docRef) => ({
         ...data,
-        id: docRef.id
-      }))
+        id: docRef.id,
+      }));
     }
 
-    const first = snapshot.docs[0]
+    const first = snapshot.docs[0];
 
-    return { id: first.id, ...first.data() }
-  })
-}
+    return { id: first.id, ...first.data() };
+  });
+};
 
-export const getCommentsQuery = postId => {
+export const getCommentsQuery = (postId) => {
   const query = commentsRef
-    .where('postId', '==', postId)
-    .orderBy('submitted', 'asc')
-  return query
-}
+    .where("postId", "==", postId)
+    .orderBy("submitted", "asc");
+  return query;
+};
 
 export const writeComment = (body, postId) => {
   const data = {
     body,
     postId,
-    submitted: Timestamp.now()
-  }
+    submitted: Timestamp.now(),
+  };
 
-  return commentsRef.add(data).then(docRef => ({ ...data, id: docRef.id }))
-}
+  return commentsRef.add(data).then((docRef) => ({ ...data, id: docRef.id }));
+};

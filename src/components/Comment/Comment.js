@@ -8,7 +8,7 @@ const Comment = props => (
     <div className="info">
       <span>posted on </span>
       <span className="submitted">
-        {format(props.submitted, 'YYYY-MM-DD HH:mm:ss')}
+        {format(props.submitted, 'yyyy-MM-dd HH:mm:ss')}
       </span>
     </div>
   </div>

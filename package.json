@@ -1,7 +1,6 @@
 {
   "name": "url-comments",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -9,13 +8,13 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "date-fns": "^2.2.1",
-    "firebase": "^6.6.1",
-    "lodash": "^4.17.15",
+    "date-fns": "^2.14.0",
+    "firebase": "^7.16.1",
+    "lodash": "^4.17.19",
     "normalize.css": "^8.0.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.1"
   },
   "browserslist": {
     "development": [
