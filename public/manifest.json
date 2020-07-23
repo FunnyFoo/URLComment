@@ -3,7 +3,7 @@
   "name": "URLComment",
   "short_name": "url-comment",
   "description": "Comment on the web",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "icons": {
     "16": "images/icon16.png",
     "48": "images/icon48.png",
